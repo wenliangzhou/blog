@@ -1,0 +1,1014 @@
+<!DOCTYPE html>
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-CN">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+<link rel="stylesheet" href="https://cdn.bootcss.com/font-awesome/4.6.2/css/font-awesome.min.css">
+
+<link rel="stylesheet" href="/blog/css/main.css?v=7.1.0">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/apple-touch-icon-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/favicon-32x32-next.png?v=7.1.0">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/favicon-16x16-next.png?v=7.1.0">
+
+
+  <link rel="mask-icon" href="/blog/images/logo.svg?v=7.1.0" color="#222">
+
+
+
+
+
+
+
+<script id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/blog/',
+    scheme: 'Pisces',
+    version: '7.1.0',
+    sidebar: {"position":"right","display":"post","offset":12,"onmobile":false,"dimmer":false},
+    back2top: true,
+    back2top_sidebar: false,
+    fancybox: false,
+    fastclick: false,
+    lazyload: false,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+  
+
+
+
+
+  <meta name="description" content="需求：  html5兼容调用摄像头录制，及拍照。   兼容情况：  QQ，微信，自家APP内嵌的html5页面。   痛点：  安卓录制视频太大，和摄像头的像素有关系，图片大到没有关系可以canvas压缩。但视频没有太好的办法。除了第一步用getusermediaAPI获取视频流，在用mediarecorderAPI进行处理数据。可以控制视频大小。IOS录 制的视频系统貌似自动做了压缩，视频不是">
+<meta property="og:type" content="article">
+<meta property="og:title" content="html调用摄像头录制视频拍照">
+<meta property="og:url" content="http://yoursite.com/html调用摄像头录制视频拍照/index.html">
+<meta property="og:site_name" content="合理疯狂，疯狂合理
+">
+<meta property="og:description" content="需求：  html5兼容调用摄像头录制，及拍照。   兼容情况：  QQ，微信，自家APP内嵌的html5页面。   痛点：  安卓录制视频太大，和摄像头的像素有关系，图片大到没有关系可以canvas压缩。但视频没有太好的办法。除了第一步用getusermediaAPI获取视频流，在用mediarecorderAPI进行处理数据。可以控制视频大小。IOS录 制的视频系统貌似自动做了压缩，视频不是">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-08-13T08:27:15.087Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="html调用摄像头录制视频拍照">
+<meta name="twitter:description" content="需求：  html5兼容调用摄像头录制，及拍照。   兼容情况：  QQ，微信，自家APP内嵌的html5页面。   痛点：  安卓录制视频太大，和摄像头的像素有关系，图片大到没有关系可以canvas压缩。但视频没有太好的办法。除了第一步用getusermediaAPI获取视频流，在用mediarecorderAPI进行处理数据。可以控制视频大小。IOS录 制的视频系统貌似自动做了压缩，视频不是">
+
+
+
+  <link rel="alternate" href="/blog/atom.xml" title="合理疯狂，疯狂合理
+" type="application/atom+xml">
+
+
+
+  
+  
+  <link rel="canonical" href="http://yoursite.com/html调用摄像头录制视频拍照/">
+
+
+
+<script id="page.configurations">
+  CONFIG.page = {
+    sidebar: "",
+  };
+</script>
+
+  <title>html调用摄像头录制视频拍照 | 合理疯狂，疯狂合理
+</title>
+  
+
+
+
+
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?676dd4adaf1edb624bda39e72c07eb71";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .motion-element,
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-title { opacity: initial; }
+
+  .use-motion .logo,
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-CN">
+
+  
+  
+    
+  
+
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="container sidebar-position-right page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/blog/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">合理疯狂，疯狂合理
+</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+    
+    
+  </div>
+
+  <div class="site-nav-toggle">
+    <button aria-label="切换导航栏">
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  
+    <ul id="menu" class="menu">
+      
+        
+        
+        
+          
+          <li class="menu-item menu-item-home">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/" rel="section"><i class="menu-item-icon fa fa-fw fa-home"></i> <br>首页</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-categories">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/categories/" rel="section"><i class="menu-item-icon fa fa-fw fa-th"></i> <br>分类</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-tags">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/tags/" rel="section"><i class="menu-item-icon fa fa-fw fa-tags"></i> <br>标签</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-about">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/about/" rel="section"><i class="menu-item-icon fa fa-fw fa-user"></i> <br>关于</a>
+
+  </li>
+        
+        
+        
+          
+          <li class="menu-item menu-item-archives">
+
+    
+    
+    
+      
+    
+
+    
+
+    <a href="/blog/archives/" rel="section"><i class="menu-item-icon fa fa-fw fa-archive"></i> <br>归档</a>
+
+  </li>
+
+      
+      
+    </ul>
+  
+
+  
+
+  
+</nav>
+
+
+
+  
+
+
+
+</div>
+    </header>
+
+    
+
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+            
+
+          
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/html调用摄像头录制视频拍照/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="周文亮">
+      <meta itemprop="description" content="周文亮的博客，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面">
+      <meta itemprop="image" content="/blog/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="合理疯狂，疯狂合理
+">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">html调用摄像头录制视频拍照
+
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+
+            
+            
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+
+              
+                
+              
+
+              <time title="创建时间：2019-05-22 10:32:42" itemprop="dateCreated datePublished" datetime="2019-05-22T10:32:42+08:00">2019-05-22</time>
+            
+
+            
+              
+
+              
+                
+                <span class="post-meta-divider">|</span>
+                
+
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-calendar-check-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">更新于</span>
+                
+                <time title="修改时间：2019-08-13 16:27:15" itemprop="dateModified" datetime="2019-08-13T16:27:15+08:00">2019-08-13</time>
+              
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+
+                
+                
+                  ，
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/blog/categories/前端/JS/" itemprop="url" rel="index"><span itemprop="name">JS</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><p>需求：</p>
+<ul>
+<li>html5兼容调用摄像头录制，及拍照。</li>
+</ul>
+</li>
+<li><p>兼容情况：</p>
+<ul>
+<li>QQ，微信，自家APP内嵌的html5页面。</li>
+</ul>
+</li>
+<li><p>痛点：</p>
+<ul>
+<li><p>安卓录制视频太大，和摄像头的像素有关系，图片大到没有关系可以canvas压缩。但视频没有太好的办法。除了第一步用<strong>getusermedia</strong>API获取视频流，在用<strong>mediarecorder</strong>API进行处理数据。可以控制视频大小。IOS录 制的视频系统貌似自动做了压缩，视频不是很大。</p>
+</li>
+<li><p>所以采用原生 <strong>input file</strong>和<strong>getusermedia</strong>API两种方式结合进行摄像头调用。</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>下面就是vue组件代码代码：</p>
+<ul>
+<li><p>组件思路基本如下:</p>
+<ul>
+<li><strong>camera</strong>组件需注意:各种浏览器点击是否直接弹出相机，还是有选择文件，相册，属性的配置是不同的。所以做了如下代码的兼容。但QQ嵌入浏览器只能有选择文件的选项，不能配置直接弹出相机。至于APP,自己APP直接file文件不能弹出相机,只有选择文件，后面APP更新了，，貌似是APP禁用了file弹出相机应该有某些权限设置的原因。</li>
+<li><strong>mediarecorder</strong>组件在安卓浏览器情况下用调用就可以了。<br>不同端调用组件的情况：</li>
+<li>IOS 调用<strong>camera</strong>组件</li>
+<li>安卓浏览器情况下 调用<strong>mediarecorder</strong>组件</li>
+<li>APP内嵌h5 调用调用<strong>camera</strong>组件  (ps：可能权限问题不能调用相机，但是ios 自己APP可以调用相机)<br>那怎么判断是在APP呢，IOS还是安卓直接UA判断就可以了。可以通过设置url参数只要有这个参数，一定是在APP下访问的h5页面。当然可能不适用所有场景。</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 相机拍照录制组件</span></span><br><span class="line"><span class="keyword">var</span> camera = &#123;</span><br><span class="line">    template:</span><br><span class="line">        <span class="string">'&lt;label  class="hidd"&gt;'</span> +</span><br><span class="line">        <span class="string">'&lt;input type="file" :class="_class" :name="name"  :accept="_accept" :capture = "qqOrWx" &gt;'</span> +</span><br><span class="line">        <span class="string">'&lt;/label&gt;'</span>,</span><br><span class="line">    props: [</span><br><span class="line">        <span class="string">'accept'</span>,</span><br><span class="line">        <span class="string">'capture'</span>,</span><br><span class="line">        <span class="string">'name'</span>,</span><br><span class="line">        <span class="string">'_class'</span>,</span><br><span class="line">        <span class="string">'direct'</span></span><br><span class="line">    ],</span><br><span class="line">    computed: &#123;</span><br><span class="line">        <span class="string">'_accept'</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.accept || <span class="string">'image/*'</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'qqOrWx'</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.direct) &#123;</span><br><span class="line">                <span class="keyword">return</span> <span class="keyword">this</span>.capture;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">this</span>.isWQ();</span><br><span class="line">            <span class="keyword">switch</span> (<span class="keyword">this</span>.isqq) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'qq'</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="keyword">this</span>.capture;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'weixin'</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'iPhone'</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods: &#123;</span><br><span class="line">        isWQ: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> _this = <span class="keyword">this</span>;</span><br><span class="line">            <span class="keyword">var</span> ua = <span class="built_in">window</span>.navigator.userAgent.toLowerCase();</span><br><span class="line">            <span class="keyword">if</span> (ua.indexOf(<span class="string">'qq'</span>) &gt; <span class="number">-1</span>) &#123;</span><br><span class="line">                <span class="keyword">if</span>(<span class="regexp">/iPhone/i</span>.test(ua))&#123;</span><br><span class="line">                    _this.isqq = <span class="string">"iPhone"</span>;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (<span class="regexp">/nettype/i</span>.test(ua)) &#123;</span><br><span class="line">                    <span class="comment">//微信或者QQ</span></span><br><span class="line">                    <span class="keyword">if</span> (<span class="regexp">/micromessenger/i</span>.test(ua)) &#123;</span><br><span class="line">                        <span class="comment">//微信</span></span><br><span class="line">                        _this.isqq = <span class="string">"weixin"</span>;</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                        <span class="comment">//QQ</span></span><br><span class="line">                        _this.isqq = <span class="string">"qq"</span>;</span><br><span class="line">                        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    <span class="comment">//QQ浏览器</span></span><br><span class="line">                    _this.isqq = <span class="string">"QQliulanqi"</span>;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                <span class="comment">//其他浏览器</span></span><br><span class="line">                _this.isqq = <span class="string">""</span>;</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Vue.component(<span class="string">'camera'</span>, camera);</span><br><span class="line"></span><br><span class="line"><span class="comment">// getusermedia recorder_video</span></span><br><span class="line"><span class="keyword">var</span> recorder_video = &#123;</span><br><span class="line">    template:</span><br><span class="line">    <span class="string">'&lt;div class="recorderwrap"&gt;'</span>+</span><br><span class="line">    <span class="string">'&lt;div class="describewrap" v-show="active"&gt;'</span>+</span><br><span class="line">    <span class="string">'&lt;p class="item1"&gt;&#123;&#123;message.text10&#125;&#125;&#123;&#123;count&#125;&#125;s&lt;/p&gt;'</span>+</span><br><span class="line">    <span class="string">'&lt;/div&gt;'</span>+</span><br><span class="line">    <span class="string">'&lt;video @touchmove.prevent ref ="video" v-show="active" controls autoplay playsinline&gt;&lt;/video&gt;'</span>+</span><br><span class="line">    <span class="string">'&lt;div class="btnwrap"&gt;&lt;button @click="start"  class="bluebtn" &gt;&#123;&#123;message.text8&#125;&#125;&lt;/button&gt;'</span>+</span><br><span class="line">    <span class="string">'&lt;button @click="nextstep" class="bluebtn" :disabled="savebtn"&gt;&#123;&#123;message.text9&#125;&#125;&lt;/button&gt;&lt;/div&gt;'</span>+</span><br><span class="line">    <span class="string">'&lt;/div&gt;'</span>,</span><br><span class="line">    props:[</span><br><span class="line">        <span class="string">'constrains'</span>,</span><br><span class="line">        <span class="string">'recordtime'</span>,</span><br><span class="line">        <span class="string">'message'</span></span><br><span class="line">    ],</span><br><span class="line">    data:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> &#123;</span><br><span class="line">        mediaRecorder:<span class="string">''</span>,</span><br><span class="line">        chunks:[],</span><br><span class="line">        status:<span class="string">'inactive'</span>,</span><br><span class="line">        mediaStreamTrack :<span class="string">''</span>,</span><br><span class="line">        savebtn:<span class="literal">true</span>,</span><br><span class="line">        count:<span class="string">''</span></span><br><span class="line">      &#125;  </span><br><span class="line">    &#125;,</span><br><span class="line">    computed:&#123;</span><br><span class="line">        <span class="string">'option'</span>:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.constrains || &#123;  <span class="attr">video</span>: <span class="literal">true</span> ,<span class="attr">audio</span>: &#123;<span class="attr">echoCancellation</span>:<span class="literal">true</span>&#125;&#125;;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'videoUrl'</span>:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">window</span>.URL || <span class="built_in">window</span>.webkitURL || <span class="built_in">window</span>.mozURL || <span class="built_in">window</span>.msURL;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'time'</span>:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.recordtime || <span class="number">5000</span>;</span><br><span class="line">        &#125;,</span><br><span class="line">        <span class="string">'active'</span>:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">switch</span> (<span class="keyword">this</span>.status) &#123;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'recording'</span>:</span><br><span class="line">                    <span class="keyword">this</span>.savebtn = <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">case</span> <span class="string">'inactive'</span>:</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">                <span class="keyword">default</span>:</span><br><span class="line">                    <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">    created:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.count = <span class="keyword">this</span>.time/<span class="number">1000</span>;</span><br><span class="line">    &#125;,</span><br><span class="line">    methods:&#123;</span><br><span class="line">        getUserMedia:<span class="function"><span class="keyword">function</span> (<span class="params">constrains,success,error</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(navigator.mediaDevices.getUserMedia)&#123;</span><br><span class="line">                <span class="comment">//最新标准API</span></span><br><span class="line">                navigator.mediaDevices.getUserMedia(constrains).then(success).catch(error);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (navigator.webkitGetUserMedia)&#123;</span><br><span class="line">                <span class="comment">//webkit内核浏览器</span></span><br><span class="line">                navigator.webkitGetUserMedia(constrains).then(success).catch(error);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (navigator.mozGetUserMedia)&#123;</span><br><span class="line">                <span class="comment">//Firefox浏览器</span></span><br><span class="line">                navigator.mozGetUserMedia(constrains).then(success).catch(error);</span><br><span class="line">            &#125; <span class="keyword">else</span> <span class="keyword">if</span> (navigator.getUserMedia)&#123;</span><br><span class="line">                <span class="comment">//旧版API</span></span><br><span class="line">                navigator.getUserMedia(constrains).then(success).catch(error);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        start:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(!(navigator.mediaDevices || navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia))&#123;</span><br><span class="line">                openDialog(&#123;</span><br><span class="line">                    cht:<span class="string">'您的瀏覽器不支持拍攝視頻功能'</span>,</span><br><span class="line">                    chs:<span class="string">'您的浏览器不支持拍摄视频功能'</span></span><br><span class="line">                &#125;)</span><br><span class="line">                <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">this</span>.getUserMedia(<span class="keyword">this</span>.option,<span class="keyword">this</span>.success,<span class="keyword">this</span>.error);</span><br><span class="line">        &#125;,</span><br><span class="line">        setData:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> _this = <span class="keyword">this</span>;</span><br><span class="line">            _this.mediaRecorder.ondataavailable = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">                _this.chunks.push(e.data);</span><br><span class="line">                _this.stop();</span><br><span class="line">            &#125;</span><br><span class="line">            _this.mediaRecorder.onstop = <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">                <span class="keyword">var</span> blob = <span class="keyword">new</span> Blob(_this.chunks, &#123; <span class="string">'type'</span> : <span class="string">'video/mp4'</span> &#125;);</span><br><span class="line">                _this.chunks = [];</span><br><span class="line">                _this.blobToDataURL(blob,<span class="function"><span class="keyword">function</span> (<span class="params">data</span>) </span>&#123;</span><br><span class="line">                    <span class="keyword">var</span> reg = <span class="regexp">/^data:(video)\/(image|mp4|quicktime|webm|3gpp);base64,/</span>;</span><br><span class="line">                    <span class="keyword">var</span> str = data.replace(reg, <span class="string">""</span>);</span><br><span class="line">                    _this.savebtn = <span class="literal">false</span>;</span><br><span class="line">                    _this.message.text8 = lang==<span class="string">'cht'</span>?<span class="string">'重新錄制'</span>:<span class="string">'重新录制'</span>;</span><br><span class="line">                    _this.$emit(<span class="string">'ondata'</span>,str);</span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        stop:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> video = <span class="keyword">this</span>.$refs.video;</span><br><span class="line">            video.pause();</span><br><span class="line">            <span class="keyword">this</span>.mediaRecorder.stop();</span><br><span class="line">            <span class="keyword">this</span>.mediaStreamTrack &amp;&amp; <span class="keyword">this</span>.mediaStreamTrack.stop();</span><br><span class="line">            <span class="keyword">this</span>.status = <span class="keyword">this</span>.mediaRecorder.state;</span><br><span class="line">        &#125;,</span><br><span class="line">        blobToDataURL:<span class="function"><span class="keyword">function</span> (<span class="params">blob,callback</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> a = <span class="keyword">new</span> FileReader();</span><br><span class="line">            startwait(); <span class="comment">//开起loading的方法</span></span><br><span class="line">            a.onload = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">                stopwait();<span class="comment">//关闭loading</span></span><br><span class="line">                callback(e.target.result);</span><br><span class="line">            &#125;</span><br><span class="line">            a.readAsDataURL(blob);</span><br><span class="line">        &#125;,</span><br><span class="line">        success:<span class="function"><span class="keyword">function</span> (<span class="params">stream</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> _this = <span class="keyword">this</span>;</span><br><span class="line">            _this.mediaRecorder = <span class="keyword">new</span> MediaRecorder(stream);</span><br><span class="line">            _this.mediaRecorder.start(<span class="keyword">this</span>.time);</span><br><span class="line">            _this.mediaRecorder.stream = stream;</span><br><span class="line">            _this.status = _this.mediaRecorder.state;</span><br><span class="line">            _this.mediaStreamTrack = <span class="keyword">typeof</span> stream.stop === <span class="string">'function'</span> ? stream : stream.getTracks()[<span class="number">1</span>];</span><br><span class="line">            <span class="keyword">var</span> video = <span class="keyword">this</span>.$refs.video;</span><br><span class="line">            <span class="keyword">if</span> (<span class="string">"srcObject"</span> <span class="keyword">in</span> video) &#123;</span><br><span class="line">                video.srcObject = stream</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                video.src = <span class="built_in">window</span>.URL &amp;&amp; <span class="built_in">window</span>.URL.createObjectURL(stream) || stream</span><br><span class="line">            &#125;</span><br><span class="line">            video.muted=<span class="literal">true</span>;</span><br><span class="line">            video.volume=<span class="number">0</span>;</span><br><span class="line">            video.play();</span><br><span class="line">            _this.setData();</span><br><span class="line">            <span class="keyword">this</span>.countfn();</span><br><span class="line">        &#125;,</span><br><span class="line">        error:<span class="function"><span class="keyword">function</span> (<span class="params">err</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span>(err.name == <span class="string">'NotAllowedError'</span>)&#123;</span><br><span class="line">                openDialog(&#123;</span><br><span class="line">                    cht:<span class="string">'您的瀏覽器拍照權限被禁止'</span>,</span><br><span class="line">                    chs:<span class="string">'您的浏览器拍照权限被禁止'</span></span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;<span class="keyword">else</span> <span class="keyword">if</span>(err.name == <span class="string">'NotReadableError'</span>)&#123;</span><br><span class="line">                <span class="keyword">this</span>.constrains = &#123;  <span class="attr">video</span>: <span class="literal">true</span> ,<span class="attr">audio</span>: <span class="literal">false</span>&#125;;</span><br><span class="line">                <span class="keyword">this</span>.start();</span><br><span class="line">            &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                openDialog(&#123;</span><br><span class="line">                    cht:<span class="string">'您的瀏覽器不支持拍照功能'</span>,</span><br><span class="line">                    chs:<span class="string">'您的浏览器不支持拍照功能'</span></span><br><span class="line">                &#125;);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;,</span><br><span class="line">        nextstep:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">this</span>.$emit(<span class="string">'next'</span>);</span><br><span class="line">        &#125;,</span><br><span class="line">        countfn:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">var</span> _this = <span class="keyword">this</span>;</span><br><span class="line">            <span class="keyword">var</span> num = _this.count;</span><br><span class="line">            <span class="keyword">var</span> time = setInterval(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                _this.count--;</span><br><span class="line">                <span class="keyword">if</span> (_this.count&lt;=<span class="number">0</span>) &#123;</span><br><span class="line">                    clearInterval(time);</span><br><span class="line">                    setTimeout(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">                        _this.count = num;</span><br><span class="line">                    &#125;,<span class="number">1000</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;,<span class="number">1000</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Vue.component(<span class="string">'recordervideo'</span>, recorder_video);</span><br></pre></td></tr></table></figure>
+<p>下面是获取input file文件的base64，图片压缩方法</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取reader</span></span><br><span class="line">wlzCamera.prototype.readURL = <span class="function"><span class="keyword">function</span> (<span class="params">input, callback,changehook</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> _this = <span class="keyword">this</span>;</span><br><span class="line">    <span class="keyword">if</span> (input.files &amp;&amp; input.files[<span class="number">0</span>]) &#123;</span><br><span class="line">        changehook();</span><br><span class="line">        <span class="keyword">var</span> reader = <span class="keyword">new</span> FileReader();</span><br><span class="line">        reader.readAsDataURL(input.files[<span class="number">0</span>]);</span><br><span class="line">        reader.onload = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">            stopwait();</span><br><span class="line">            <span class="keyword">if</span> (_this.prebox) &#123;</span><br><span class="line">                <span class="comment">// 如果有预览盒子 添加预览图片</span></span><br><span class="line">                <span class="keyword">var</span> prebox = <span class="built_in">document</span>.querySelector(_this.prebox);</span><br><span class="line">                <span class="keyword">var</span> img = <span class="built_in">document</span>.createElement(<span class="string">'img'</span>);</span><br><span class="line">                img.src = e.target.result;</span><br><span class="line">                prebox.append(img);</span><br><span class="line">                img.setAttribute(<span class="string">'data-bind'</span>, _this.prebox);</span><br><span class="line"></span><br><span class="line">            &#125;</span><br><span class="line">            callback(e.target.result, e)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (_this.prebox) &#123;</span><br><span class="line">            <span class="built_in">document</span>.querySelector(<span class="string">'[data-bind = "'</span> + _this.prebox + <span class="string">'"]'</span>).remove();</span><br><span class="line">        &#125;</span><br><span class="line">        callback(<span class="literal">null</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">wlzCamera.prototype.init = <span class="function"><span class="keyword">function</span> (<span class="params">callback,changehook</span>) </span>&#123;</span><br><span class="line">    changehook = changehook?changehook:<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;startwait();&#125;</span><br><span class="line">    <span class="keyword">var</span> _this = <span class="keyword">this</span>;</span><br><span class="line">    <span class="comment">// 绑定事件回调</span></span><br><span class="line">    <span class="keyword">var</span> el = <span class="built_in">document</span>.querySelector(<span class="keyword">this</span>.fileInput);</span><br><span class="line">    el.onchange = <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">        _this.readURL(el, <span class="function"><span class="keyword">function</span> (<span class="params">v, e</span>) </span>&#123;</span><br><span class="line">            callback(v, e);</span><br><span class="line">        &#125;,changehook);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 图片压缩方法</span></span><br><span class="line">wlzCamera.prototype.compress = <span class="function"><span class="keyword">function</span> (<span class="params">option,base64,callback</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(base64.match(<span class="regexp">/video/</span>))&#123;</span><br><span class="line">        callback(base64);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;   </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">var</span> quality =  option.quality || <span class="number">0.6</span>;</span><br><span class="line">    <span class="keyword">var</span> max = option.max;</span><br><span class="line">    <span class="keyword">var</span> sacle = option.sacle || <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">var</span> result = base64;</span><br><span class="line">    <span class="keyword">var</span> maxheight = option.maxheight || <span class="number">1000</span>;</span><br><span class="line">    <span class="keyword">var</span> img = <span class="keyword">new</span> Image();</span><br><span class="line">    img.src = base64;</span><br><span class="line">    <span class="comment">// 如果质量为1，则不进行压缩。</span></span><br><span class="line">    <span class="keyword">if</span>(quality == <span class="number">1</span>)&#123;</span><br><span class="line">        callback(result);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    img.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="comment">// 生产比例</span></span><br><span class="line">        <span class="keyword">var</span> width = img.width;</span><br><span class="line">        <span class="keyword">var</span> height = img.height;</span><br><span class="line">        <span class="comment">// 重新计算宽高 默认最大1000</span></span><br><span class="line">        <span class="keyword">while</span> (height*sacle&gt;maxheight) &#123;</span><br><span class="line">            sacle -= <span class="number">0.01</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        width*=sacle;</span><br><span class="line">        height*=sacle;</span><br><span class="line">        <span class="comment">// 生产cavas</span></span><br><span class="line">        <span class="keyword">var</span> canvas = <span class="built_in">document</span>.createElement(<span class="string">'canvas'</span>);</span><br><span class="line">        <span class="keyword">var</span> cxt = canvas.getContext(<span class="string">'2d'</span>);</span><br><span class="line">        canvas.width = width;</span><br><span class="line">        canvas.height = height;</span><br><span class="line">        cxt.drawImage(img,<span class="number">0</span>,<span class="number">0</span>,width,height);</span><br><span class="line">        result = canvas.toDataURL(<span class="string">'image/jpeg'</span>,quality);</span><br><span class="line">        <span class="keyword">if</span> (max) &#123;</span><br><span class="line">            <span class="keyword">while</span> (result.length / <span class="number">1024</span> &gt; max) &#123;</span><br><span class="line">                quality -= <span class="number">0.01</span>;</span><br><span class="line">                result = canvas.toDataURL(<span class="string">"image/jpeg"</span>, quality);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        callback(result);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 封装成一个获取base64方法</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">h5getBase64</span>(<span class="params">option, callback,changehook</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> inputname = option.inputname;</span><br><span class="line">    <span class="keyword">if</span> (h5getBase64[inputname]) &#123;  <span class="comment">//单例</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 实例</span></span><br><span class="line">    <span class="keyword">var</span> _self = option.app;</span><br><span class="line">    <span class="comment">// 获取相册base64 和预览的方法</span></span><br><span class="line">    <span class="keyword">var</span> reg = option.reg;</span><br><span class="line">    h5getBase64[inputname] = <span class="keyword">new</span> wlzCamera(&#123;</span><br><span class="line">        fileInput: inputname,</span><br><span class="line">        <span class="comment">// prebox:'.box'</span></span><br><span class="line">    &#125;);</span><br><span class="line">    h5getBase64[inputname].init(<span class="function"><span class="keyword">function</span> (<span class="params">v, e</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> str;</span><br><span class="line">        <span class="keyword">if</span> (!v) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        h5getBase64[inputname].compress(option,v,<span class="function"><span class="keyword">function</span> (<span class="params">result</span>) </span>&#123;</span><br><span class="line">            str = result.replace(reg, <span class="string">""</span>);</span><br><span class="line">            callback(result, str, _self, e); </span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;,changehook);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 页面用法大致如下</span></span><br><span class="line"><span class="comment">// camera 用法</span></span><br><span class="line"> <span class="comment">// 初始化 拍照 需要的参数</span></span><br><span class="line"><span class="keyword">var</span> option = &#123;</span><br><span class="line">    app: app,</span><br><span class="line">    inputname: <span class="string">'input.shiping'</span>,</span><br><span class="line">    reg: <span class="regexp">/^data:(video|image)\/(image|mp4|quicktime|png|gif|jpeg|jpg|3gpp);base64,/</span></span><br><span class="line">&#125;</span><br><span class="line">h5getBase64(option, <span class="function"><span class="keyword">function</span> (<span class="params">v, str, _self,e</span>) </span>&#123;</span><br><span class="line">  <span class="comment">// _self 是传进来的实例对象。</span></span><br><span class="line">  <span class="comment">// dosthing</span></span><br><span class="line">  <span class="comment">// ajax</span></span><br><span class="line">&#125;);</span><br><span class="line"><span class="comment">// android 是否是安卓 isAppH5是不死APPH5  !$.arrayInclude(channel) 是不是原生APP      这些变量主要是处理什么时候隐藏彼此，调用那个组件 so 自己定义好就可以了，这里只是个思路。</span></span><br><span class="line">&lt;recordervideo v-<span class="keyword">if</span>=<span class="string">"android &amp;&amp; !isAppH5"</span> :message=<span class="string">"&#123;&#125;"</span> @next=<span class="string">"sendajax"</span>  @ondata = <span class="string">"ondata"</span>&gt;&lt;/recordervideo&gt;</span><br><span class="line">&lt;camera v-<span class="keyword">else</span>-<span class="keyword">if</span>=<span class="string">"!$.arrayInclude(channel)"</span> :_class=<span class="string">"'shiping'"</span> :name=<span class="string">"'shiping'"</span> :accept=<span class="string">"'video/*'"</span> :capture = <span class="string">"'user'"</span> :direct = <span class="string">"true"</span> &gt;&lt;/camera&gt;</span><br></pre></td></tr></table></figure>
+<p>有问什么问题可以github上联系我，或者邮箱等。</p>
+
+      
+    </div>
+
+    
+
+    
+    
+    
+
+    
+
+    
+      
+    
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/blog/浏览器兼容问题/" rel="next" title="浏览器兼容问题">
+                <i class="fa fa-chevron-left"></i> 浏览器兼容问题
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/blog/learn-english-1/" rel="prev" title="100天英语挑战 (第二轮)">
+                100天英语挑战 (第二轮) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+  </div>
+
+
+          </div>
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MzgxNS8yMDM1MA=="></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    <div class="sidebar-inner">
+
+      
+
+      
+
+      <div class="site-overview-wrap sidebar-panel sidebar-panel-active">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">周文亮</p>
+              <div class="site-description motion-element" itemprop="description">周文亮的博客，主要涉及前端知识共享、实践教程、前沿技术共同学习等方面</div>
+          </div>
+
+          
+            <nav class="site-state motion-element">
+              
+                <div class="site-state-item site-state-posts">
+                
+                  <a href="/blog/archives/">
+                
+                    <span class="site-state-item-count">22</span>
+                    <span class="site-state-item-name">日志</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-categories">
+                  
+                    
+                      <a href="/blog/categories/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">18</span>
+                    <span class="site-state-item-name">分类</span>
+                  </a>
+                </div>
+              
+
+              
+                
+                
+                <div class="site-state-item site-state-tags">
+                  
+                    
+                      <a href="/blog/tags/">
+                    
+                  
+                    
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                      
+                    
+                    <span class="site-state-item-count">6</span>
+                    <span class="site-state-item-name">标签</span>
+                  </a>
+                </div>
+              
+            </nav>
+          
+
+          
+            <div class="feed-link motion-element">
+              <a href="/blog/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+          
+
+          
+            <div class="links-of-author motion-element">
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://github.com/wenliangzhou" title="GitHub &rarr; https://github.com/wenliangzhou" rel="noopener" target="_blank"><i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="mailto:zwl752758299@gmail.com" title="E-Mail &rarr; mailto:zwl752758299@gmail.com" rel="noopener" target="_blank"><i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://twitter.com/zhouxiaoxi0" title="Twitter &rarr; https://twitter.com/zhouxiaoxi0" rel="noopener" target="_blank"><i class="fa fa-fw fa-twitter"></i>Twitter</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  
+                  
+                    
+                  
+                  
+                    
+                  
+                  <a href="https://www.youtube.com/channel/UC4IYMjMkrqGMyvZsJ_ZCbSA?view_as=subscriber" title="YouTube &rarr; https://www.youtube.com/channel/UC4IYMjMkrqGMyvZsJ_ZCbSA?view_as=subscriber" rel="noopener" target="_blank"><i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                </span>
+              
+            </div>
+          
+
+          
+
+          
+          
+
+          
+            
+          
+          
+
+        </div>
+      </div>
+
+      
+
+      
+
+    </div>
+  </aside>
+  
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2015 – <span itemprop="copyrightYear">2019</span>
+  <span class="with-love" id="animate">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">周文亮</span>
+
+  
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a href="https://hexo.io" class="theme-link" rel="noopener" target="_blank">Hexo</a> 强力驱动 v3.8.0</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 – <a href="https://theme-next.org" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> v7.1.0</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+    
+
+    
+  </div>
+
+  
+
+<script>
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script src="/blog/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script src="/blog/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+
+  
+
+
+  <script src="/blog/js/utils.js?v=7.1.0"></script>
+
+  <script src="/blog/js/motion.js?v=7.1.0"></script>
+
+
+
+  
+  
+
+
+  <script src="/blog/js/affix.js?v=7.1.0"></script>
+
+  <script src="/blog/js/schemes/pisces.js?v=7.1.0"></script>
+
+
+
+  
+  <script src="/blog/js/scrollspy.js?v=7.1.0"></script>
+<script src="/blog/js/post-details.js?v=7.1.0"></script>
+
+
+
+  
+
+
+  <script src="/blog/js/next-boot.js?v=7.1.0"></script>
+
+
+  
+
+  
+
+  
+
+  
+
+
+  
+    <script>
+  window.livereOptions = {
+    refer: 'html调用摄像头录制视频拍照/'
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({"tex2jax":{"inlineMath":[["$","$"],["\\(","\\)"]],"skipTags":["script","noscript","style","textarea","pre","code"],"processEscapes":true},"TeX":{"equationNumbers":{"autoNumber":"AMS"}}});
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end -->
+
+  
+
+
+  
+
+
+
+
+  
+
+  
+
+  
+  
+
+  
+  
+
+  
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
