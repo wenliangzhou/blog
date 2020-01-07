@@ -80,18 +80,18 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[函数柯里化]]></title>
-    <url>%2F%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[高级程序设计笔记]]></title>
+    <url>%2FJavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[DOM概念文档对象模型（DOM，Document Object Model）是针对 XML 但经过扩展用于 HTML 的应用程序编程接口（API，Application Programming Interface）。通过 DOM 创建的这个表示文档的树形图，开发人员获得了控制页面内容和结构的主动权。借助DOM 提供的 API，开发人员可以轻松自如地删除、添加、替换或修改任何节点。 小结理解 DOM 的关键，就是理解 DOM 对性能的影响。DOM 操作往往是 JavaScript 程序中开销最大的 2 部分，而因访问 NodeList 导致的问题为最多。NodeList 对象都是“动态的”，这就意味着每次访问NodeList 对象，都会运行一次查询。有鉴于此，最好的办法就是尽量减少 DOM 操作。 内存和性能由于事件处理程序可以为现代 Web 应用程序提供交互能力，因此许多开发人员会不分青红皂白地向页面中添加大量的处理程序。在创建 GUI 的语言（如 C#）中，为 GUI 中的每个按钮添加一个 onclick事件处理程序是司空见惯的事，而且这样做也不会导致什么问题。可是在 JavaScript 中，添加到页面上的事件处理程序数量将直接关系到页面的整体运行性能。导致这一问题的原因是多方面的。首先，每个函数都是对象，都会占用内存；内存中的对象越多，性能就越差。其次，必须事先指定所有事件处理程序而导致的 DOM 访问次数，会延迟整个页面的交互就绪时间。事实上，从如何利用好事件处理程序的角度出发，还是有一些方法能够提升性能的。 事件委托可以解决性能，和设置未来添加的元素的事件 移除事件处理程序在两种情况下，可能会造成上述问题。第一种情况就是从文档中移除带有事件处理程序的元素时。这可能是通过纯粹的 DOM 操作，例如使用 removeChild()和 replaceChild()方法，但更多地是发生在使用 innerHTML 替换页面中某一部分的时候。如果带有事件处理程序的元素被 innerHTML 删除了，那么原来添加到元素中的事件处理程序极有可能无法被当作垃圾回收。来看下面的例子。 函数柯里化1234567891011121314function curry(fn)&#123; var args = Array.prototype.slice.call(arguments, 1); return function()&#123; var innerArgs = Array.prototype.slice.call(arguments); var finalArgs = args.concat(innerArgs); return fn.apply(null, finalArgs); &#125;; &#125;function add(num1, num2)&#123; return num1 + num2; &#125; var curriedAdd = curry(add, 5); alert(curriedAdd(3)); //8 当使用 bind()时，它会返回绑定到给定环境的函数，并且可能它其中某些函数参数已经被设好。当你想除了 event 对象再额外给事件处理程序传递参数时，这非常有用，例如： 123456789ECMAScript 5 的 bind()方法也实现函数柯里化，只要在 this 的值之后再传入另一个参数即可。var handler = &#123; message: "Event handled", handleClick: function(name, event)&#123; alert(this.message + ":" + name + ":" + event.type); &#125; &#125;; var btn = document.getElementById("my-btn"); EventUtil.addHandler(btn, "click", handler.handleClick.bind(handler, "my-btn")); JavaScript 中的柯里化函数和绑定函数提供了强大的动态函数创建功能。使用 bind()还是 curry()要根据是否需要 object 对象响应来决定。它们都能用于创建复杂的算法和功能，当然两者都不应滥用，因为每个函数都会带来额外的开销。 自定义事件12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849function EventTarget() &#123; this.handlers = &#123;&#125;; &#125;EventTarget.prototype = &#123; constructor: EventTarget, addHandler: function (type, handler) &#123; if (typeof this.handlers[type] == "undefined") &#123; this.handlers[type] = []; &#125; this.handlers[type].push(handler); &#125;, fire: function (event) &#123; if (!event.target) &#123; event.target = this; &#125; if (this.handlers[event.type] instanceof Array) &#123; var handlers = this.handlers[event.type]; for (var i = 0, len = handlers.length; i &lt; len; i++) &#123; handlers[i](event); &#125; &#125; &#125;, removeHandler: function (type, handler) &#123; if (this.handlers[type] instanceof Array) &#123; var handlers = this.handlers[type]; for (var i = 0, len = handlers.length; i &lt; len; i++) &#123; if (handlers[i] === handler) &#123; break; &#125; &#125; handlers.splice(i, 1); &#125; &#125;&#125;;function handleMessage(event)&#123; alert("Message received: " + event.message); &#125; //创建一个新对象var target = new EventTarget(); //添加一个事件处理程序target.addHandler("message", handleMessage); //触发事件target.fire(&#123; type: "message", message: "Hello world!"&#125;); //删除事件处理程序target.removeHandler("message", handleMessage); //再次，应没有处理程序target.fire(&#123; type: "message", message: "Hello world!"&#125;);]]></content>
       <categories>
         <category>书籍笔记</category>
         <category>JavaScript高级程序设计</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[高级程序设计笔记]]></title>
-    <url>%2FJavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[DOM概念文档对象模型（DOM，Document Object Model）是针对 XML 但经过扩展用于 HTML 的应用程序编程接口（API，Application Programming Interface）。通过 DOM 创建的这个表示文档的树形图，开发人员获得了控制页面内容和结构的主动权。借助DOM 提供的 API，开发人员可以轻松自如地删除、添加、替换或修改任何节点。 小结理解 DOM 的关键，就是理解 DOM 对性能的影响。DOM 操作往往是 JavaScript 程序中开销最大的 2 部分，而因访问 NodeList 导致的问题为最多。NodeList 对象都是“动态的”，这就意味着每次访问NodeList 对象，都会运行一次查询。有鉴于此，最好的办法就是尽量减少 DOM 操作。 内存和性能由于事件处理程序可以为现代 Web 应用程序提供交互能力，因此许多开发人员会不分青红皂白地向页面中添加大量的处理程序。在创建 GUI 的语言（如 C#）中，为 GUI 中的每个按钮添加一个 onclick事件处理程序是司空见惯的事，而且这样做也不会导致什么问题。可是在 JavaScript 中，添加到页面上的事件处理程序数量将直接关系到页面的整体运行性能。导致这一问题的原因是多方面的。首先，每个函数都是对象，都会占用内存；内存中的对象越多，性能就越差。其次，必须事先指定所有事件处理程序而导致的 DOM 访问次数，会延迟整个页面的交互就绪时间。事实上，从如何利用好事件处理程序的角度出发，还是有一些方法能够提升性能的。 事件委托可以解决性能，和设置未来添加的元素的事件 移除事件处理程序在两种情况下，可能会造成上述问题。第一种情况就是从文档中移除带有事件处理程序的元素时。这可能是通过纯粹的 DOM 操作，例如使用 removeChild()和 replaceChild()方法，但更多地是发生在使用 innerHTML 替换页面中某一部分的时候。如果带有事件处理程序的元素被 innerHTML 删除了，那么原来添加到元素中的事件处理程序极有可能无法被当作垃圾回收。来看下面的例子。 函数柯里化1234567891011121314function curry(fn)&#123; var args = Array.prototype.slice.call(arguments, 1); return function()&#123; var innerArgs = Array.prototype.slice.call(arguments); var finalArgs = args.concat(innerArgs); return fn.apply(null, finalArgs); &#125;; &#125;function add(num1, num2)&#123; return num1 + num2; &#125; var curriedAdd = curry(add, 5); alert(curriedAdd(3)); //8 当使用 bind()时，它会返回绑定到给定环境的函数，并且可能它其中某些函数参数已经被设好。当你想除了 event 对象再额外给事件处理程序传递参数时，这非常有用，例如： 123456789ECMAScript 5 的 bind()方法也实现函数柯里化，只要在 this 的值之后再传入另一个参数即可。var handler = &#123; message: "Event handled", handleClick: function(name, event)&#123; alert(this.message + ":" + name + ":" + event.type); &#125; &#125;; var btn = document.getElementById("my-btn"); EventUtil.addHandler(btn, "click", handler.handleClick.bind(handler, "my-btn")); JavaScript 中的柯里化函数和绑定函数提供了强大的动态函数创建功能。使用 bind()还是 curry()要根据是否需要 object 对象响应来决定。它们都能用于创建复杂的算法和功能，当然两者都不应滥用，因为每个函数都会带来额外的开销。 自定义事件12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849function EventTarget() &#123; this.handlers = &#123;&#125;; &#125;EventTarget.prototype = &#123; constructor: EventTarget, addHandler: function (type, handler) &#123; if (typeof this.handlers[type] == "undefined") &#123; this.handlers[type] = []; &#125; this.handlers[type].push(handler); &#125;, fire: function (event) &#123; if (!event.target) &#123; event.target = this; &#125; if (this.handlers[event.type] instanceof Array) &#123; var handlers = this.handlers[event.type]; for (var i = 0, len = handlers.length; i &lt; len; i++) &#123; handlers[i](event); &#125; &#125; &#125;, removeHandler: function (type, handler) &#123; if (this.handlers[type] instanceof Array) &#123; var handlers = this.handlers[type]; for (var i = 0, len = handlers.length; i &lt; len; i++) &#123; if (handlers[i] === handler) &#123; break; &#125; &#125; handlers.splice(i, 1); &#125; &#125;&#125;;function handleMessage(event)&#123; alert("Message received: " + event.message); &#125; //创建一个新对象var target = new EventTarget(); //添加一个事件处理程序target.addHandler("message", handleMessage); //触发事件target.fire(&#123; type: "message", message: "Hello world!"&#125;); //删除事件处理程序target.removeHandler("message", handleMessage); //再次，应没有处理程序target.fire(&#123; type: "message", message: "Hello world!"&#125;);]]></content>
+    <title><![CDATA[函数柯里化]]></title>
+    <url>%2F%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96%2F</url>
+    <content type="text"></content>
       <categories>
         <category>书籍笔记</category>
         <category>JavaScript高级程序设计</category>
@@ -164,12 +164,12 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[node-learn]]></title>
-    <url>%2Fnode-learn%2F</url>
-    <content type="text"><![CDATA[主要承诺：node 学习笔记的记录 开始时间：2019-7-15 背景在开启多方便学习记录的同时，开启技术学习记录。 规则 尽量快速掌握node，并实践 复习该笔记。 阶段 1天 7天 30天 60天 90天 100天 额外的补充 难点等深度扩展，会另写一篇文章进行记录。 日志模板123456789### 第N天#### 今天的进步#### 思想和情绪#### 明天的计划--- 第1天 2019年7月15日今天的进步思想和情绪明天的计划]]></content>
+    <title><![CDATA[性能优化-SSR]]></title>
+    <url>%2FSSR%2F</url>
+    <content type="text"></content>
       <categories>
         <category>前端技术学习记录</category>
-        <category>node</category>
+        <category>VUE</category>
       </categories>
       <tags>
         <tag>前端技术学习记录</tag>
@@ -188,12 +188,12 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[性能优化-SSR]]></title>
-    <url>%2FSSR%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[node-learn]]></title>
+    <url>%2Fnode-learn%2F</url>
+    <content type="text"><![CDATA[主要承诺：node 学习笔记的记录 开始时间：2019-7-15 背景在开启多方便学习记录的同时，开启技术学习记录。 规则 尽量快速掌握node，并实践 复习该笔记。 阶段 1天 7天 30天 60天 90天 100天 额外的补充 难点等深度扩展，会另写一篇文章进行记录。 日志模板123456789### 第N天#### 今天的进步#### 思想和情绪#### 明天的计划--- 第1天 2019年7月15日今天的进步思想和情绪明天的计划]]></content>
       <categories>
         <category>前端技术学习记录</category>
-        <category>VUE</category>
+        <category>node</category>
       </categories>
       <tags>
         <tag>前端技术学习记录</tag>
