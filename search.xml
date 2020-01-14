@@ -1,6 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[女性脑]]></title>
+    <url>%2F%E5%A5%B3%E6%80%A7%E8%84%91%2F</url>
+    <content type="text"><![CDATA[《女性脑》|李南南解读关于作者作者丹尼尔·亚蒙，世界知名脑成像专家，被誉为“美国大脑健康之父”。他创建了世界闻名的亚蒙诊所，拥有全球超大的与行为相关的功能性脑扫描数据库，总共收集了来自111个国家的125000多份大脑扫描数据。设计、制作、主持过11个很受美国大众欢迎的大脑节目，10次荣登《纽约时报》畅销书排行榜，《华盛顿邮报》称他为“全美备受欢迎的精神科医生” 关于本书 自己的总结果然饮食得杂 关于进化而产生的大脑优势。 本书保护的方法通过以下几个方面 通过饮食，五颜六色的食物，膳食纤维。 意识大脑健康这回事]]></content>
+      <categories>
+        <category>book</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[富爸爸投资指南]]></title>
     <url>%2F%E5%AF%8C%E7%88%B8%E7%88%B8%E6%8A%95%E8%B5%84%E6%8C%87%E5%8D%97%2F</url>
     <content type="text"><![CDATA[《富爸爸投资指南》关于作者罗伯特·清岐 关于本书 自己的总结需要有意识的培养财商 核心内容]]></content>
@@ -88,18 +96,18 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[函数柯里化]]></title>
-    <url>%2F%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[高级程序设计笔记]]></title>
+    <url>%2FJavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[DOM概念文档对象模型（DOM，Document Object Model）是针对 XML 但经过扩展用于 HTML 的应用程序编程接口（API，Application Programming Interface）。通过 DOM 创建的这个表示文档的树形图，开发人员获得了控制页面内容和结构的主动权。借助DOM 提供的 API，开发人员可以轻松自如地删除、添加、替换或修改任何节点。 小结理解 DOM 的关键，就是理解 DOM 对性能的影响。DOM 操作往往是 JavaScript 程序中开销最大的 2 部分，而因访问 NodeList 导致的问题为最多。NodeList 对象都是“动态的”，这就意味着每次访问NodeList 对象，都会运行一次查询。有鉴于此，最好的办法就是尽量减少 DOM 操作。 内存和性能由于事件处理程序可以为现代 Web 应用程序提供交互能力，因此许多开发人员会不分青红皂白地向页面中添加大量的处理程序。在创建 GUI 的语言（如 C#）中，为 GUI 中的每个按钮添加一个 onclick事件处理程序是司空见惯的事，而且这样做也不会导致什么问题。可是在 JavaScript 中，添加到页面上的事件处理程序数量将直接关系到页面的整体运行性能。导致这一问题的原因是多方面的。首先，每个函数都是对象，都会占用内存；内存中的对象越多，性能就越差。其次，必须事先指定所有事件处理程序而导致的 DOM 访问次数，会延迟整个页面的交互就绪时间。事实上，从如何利用好事件处理程序的角度出发，还是有一些方法能够提升性能的。 事件委托可以解决性能，和设置未来添加的元素的事件 移除事件处理程序在两种情况下，可能会造成上述问题。第一种情况就是从文档中移除带有事件处理程序的元素时。这可能是通过纯粹的 DOM 操作，例如使用 removeChild()和 replaceChild()方法，但更多地是发生在使用 innerHTML 替换页面中某一部分的时候。如果带有事件处理程序的元素被 innerHTML 删除了，那么原来添加到元素中的事件处理程序极有可能无法被当作垃圾回收。来看下面的例子。 函数柯里化1234567891011121314function curry(fn)&#123; var args = Array.prototype.slice.call(arguments, 1); return function()&#123; var innerArgs = Array.prototype.slice.call(arguments); var finalArgs = args.concat(innerArgs); return fn.apply(null, finalArgs); &#125;; &#125;function add(num1, num2)&#123; return num1 + num2; &#125; var curriedAdd = curry(add, 5); alert(curriedAdd(3)); //8 当使用 bind()时，它会返回绑定到给定环境的函数，并且可能它其中某些函数参数已经被设好。当你想除了 event 对象再额外给事件处理程序传递参数时，这非常有用，例如： 123456789ECMAScript 5 的 bind()方法也实现函数柯里化，只要在 this 的值之后再传入另一个参数即可。var handler = &#123; message: "Event handled", handleClick: function(name, event)&#123; alert(this.message + ":" + name + ":" + event.type); &#125; &#125;; var btn = document.getElementById("my-btn"); EventUtil.addHandler(btn, "click", handler.handleClick.bind(handler, "my-btn")); JavaScript 中的柯里化函数和绑定函数提供了强大的动态函数创建功能。使用 bind()还是 curry()要根据是否需要 object 对象响应来决定。它们都能用于创建复杂的算法和功能，当然两者都不应滥用，因为每个函数都会带来额外的开销。 自定义事件12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849function EventTarget() &#123; this.handlers = &#123;&#125;; &#125;EventTarget.prototype = &#123; constructor: EventTarget, addHandler: function (type, handler) &#123; if (typeof this.handlers[type] == "undefined") &#123; this.handlers[type] = []; &#125; this.handlers[type].push(handler); &#125;, fire: function (event) &#123; if (!event.target) &#123; event.target = this; &#125; if (this.handlers[event.type] instanceof Array) &#123; var handlers = this.handlers[event.type]; for (var i = 0, len = handlers.length; i &lt; len; i++) &#123; handlers[i](event); &#125; &#125; &#125;, removeHandler: function (type, handler) &#123; if (this.handlers[type] instanceof Array) &#123; var handlers = this.handlers[type]; for (var i = 0, len = handlers.length; i &lt; len; i++) &#123; if (handlers[i] === handler) &#123; break; &#125; &#125; handlers.splice(i, 1); &#125; &#125;&#125;;function handleMessage(event)&#123; alert("Message received: " + event.message); &#125; //创建一个新对象var target = new EventTarget(); //添加一个事件处理程序target.addHandler("message", handleMessage); //触发事件target.fire(&#123; type: "message", message: "Hello world!"&#125;); //删除事件处理程序target.removeHandler("message", handleMessage); //再次，应没有处理程序target.fire(&#123; type: "message", message: "Hello world!"&#125;);]]></content>
       <categories>
         <category>书籍笔记</category>
         <category>JavaScript高级程序设计</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[高级程序设计笔记]]></title>
-    <url>%2FJavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[DOM概念文档对象模型（DOM，Document Object Model）是针对 XML 但经过扩展用于 HTML 的应用程序编程接口（API，Application Programming Interface）。通过 DOM 创建的这个表示文档的树形图，开发人员获得了控制页面内容和结构的主动权。借助DOM 提供的 API，开发人员可以轻松自如地删除、添加、替换或修改任何节点。 小结理解 DOM 的关键，就是理解 DOM 对性能的影响。DOM 操作往往是 JavaScript 程序中开销最大的 2 部分，而因访问 NodeList 导致的问题为最多。NodeList 对象都是“动态的”，这就意味着每次访问NodeList 对象，都会运行一次查询。有鉴于此，最好的办法就是尽量减少 DOM 操作。 内存和性能由于事件处理程序可以为现代 Web 应用程序提供交互能力，因此许多开发人员会不分青红皂白地向页面中添加大量的处理程序。在创建 GUI 的语言（如 C#）中，为 GUI 中的每个按钮添加一个 onclick事件处理程序是司空见惯的事，而且这样做也不会导致什么问题。可是在 JavaScript 中，添加到页面上的事件处理程序数量将直接关系到页面的整体运行性能。导致这一问题的原因是多方面的。首先，每个函数都是对象，都会占用内存；内存中的对象越多，性能就越差。其次，必须事先指定所有事件处理程序而导致的 DOM 访问次数，会延迟整个页面的交互就绪时间。事实上，从如何利用好事件处理程序的角度出发，还是有一些方法能够提升性能的。 事件委托可以解决性能，和设置未来添加的元素的事件 移除事件处理程序在两种情况下，可能会造成上述问题。第一种情况就是从文档中移除带有事件处理程序的元素时。这可能是通过纯粹的 DOM 操作，例如使用 removeChild()和 replaceChild()方法，但更多地是发生在使用 innerHTML 替换页面中某一部分的时候。如果带有事件处理程序的元素被 innerHTML 删除了，那么原来添加到元素中的事件处理程序极有可能无法被当作垃圾回收。来看下面的例子。 函数柯里化1234567891011121314function curry(fn)&#123; var args = Array.prototype.slice.call(arguments, 1); return function()&#123; var innerArgs = Array.prototype.slice.call(arguments); var finalArgs = args.concat(innerArgs); return fn.apply(null, finalArgs); &#125;; &#125;function add(num1, num2)&#123; return num1 + num2; &#125; var curriedAdd = curry(add, 5); alert(curriedAdd(3)); //8 当使用 bind()时，它会返回绑定到给定环境的函数，并且可能它其中某些函数参数已经被设好。当你想除了 event 对象再额外给事件处理程序传递参数时，这非常有用，例如： 123456789ECMAScript 5 的 bind()方法也实现函数柯里化，只要在 this 的值之后再传入另一个参数即可。var handler = &#123; message: "Event handled", handleClick: function(name, event)&#123; alert(this.message + ":" + name + ":" + event.type); &#125; &#125;; var btn = document.getElementById("my-btn"); EventUtil.addHandler(btn, "click", handler.handleClick.bind(handler, "my-btn")); JavaScript 中的柯里化函数和绑定函数提供了强大的动态函数创建功能。使用 bind()还是 curry()要根据是否需要 object 对象响应来决定。它们都能用于创建复杂的算法和功能，当然两者都不应滥用，因为每个函数都会带来额外的开销。 自定义事件12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849function EventTarget() &#123; this.handlers = &#123;&#125;; &#125;EventTarget.prototype = &#123; constructor: EventTarget, addHandler: function (type, handler) &#123; if (typeof this.handlers[type] == "undefined") &#123; this.handlers[type] = []; &#125; this.handlers[type].push(handler); &#125;, fire: function (event) &#123; if (!event.target) &#123; event.target = this; &#125; if (this.handlers[event.type] instanceof Array) &#123; var handlers = this.handlers[event.type]; for (var i = 0, len = handlers.length; i &lt; len; i++) &#123; handlers[i](event); &#125; &#125; &#125;, removeHandler: function (type, handler) &#123; if (this.handlers[type] instanceof Array) &#123; var handlers = this.handlers[type]; for (var i = 0, len = handlers.length; i &lt; len; i++) &#123; if (handlers[i] === handler) &#123; break; &#125; &#125; handlers.splice(i, 1); &#125; &#125;&#125;;function handleMessage(event)&#123; alert("Message received: " + event.message); &#125; //创建一个新对象var target = new EventTarget(); //添加一个事件处理程序target.addHandler("message", handleMessage); //触发事件target.fire(&#123; type: "message", message: "Hello world!"&#125;); //删除事件处理程序target.removeHandler("message", handleMessage); //再次，应没有处理程序target.fire(&#123; type: "message", message: "Hello world!"&#125;);]]></content>
+    <title><![CDATA[函数柯里化]]></title>
+    <url>%2F%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96%2F</url>
+    <content type="text"></content>
       <categories>
         <category>书籍笔记</category>
         <category>JavaScript高级程序设计</category>
@@ -184,9 +192,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Vue-组件设计]]></title>
-    <url>%2F%E7%BB%84%E4%BB%B6%E8%AE%BE%E8%AE%A1%2F</url>
-    <content type="text"><![CDATA[封装注意 .sync 修饰符，指令的灵活运用。]]></content>
+    <title><![CDATA[性能优化-SSR]]></title>
+    <url>%2FSSR%2F</url>
+    <content type="text"></content>
       <categories>
         <category>前端技术学习记录</category>
         <category>VUE</category>
@@ -196,9 +204,9 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[性能优化-SSR]]></title>
-    <url>%2FSSR%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[Vue-组件设计]]></title>
+    <url>%2F%E7%BB%84%E4%BB%B6%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[封装注意 .sync 修饰符，指令的灵活运用。]]></content>
       <categories>
         <category>前端技术学习记录</category>
         <category>VUE</category>
@@ -250,15 +258,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[单例模式]]></title>
-    <url>%2FjavascriptModel%2F</url>
-    <content type="text"><![CDATA[期望结果： 123var uni = new universe();var uni2 = new universe();nni === uni2 // true; 需要保证完全相等，且指针不变。 实现方法：可以使用，静态属性缓存实例。 123456789function Universe() &#123; if(typeof Universe.instance === "object")&#123; return Universe.instance; &#125; this.name = '小明'; this.age = 8 Universe.instance = this; // 隐式返回this;&#125;]]></content>
-      <categories>
-        <category>书籍笔记</category>
-        <category>javascript模式</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[策略模式]]></title>
     <url>%2F%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[策略模式支持您在运行时选择算法。代码客户端可以使用同一个接口来工作，但是它却根据客户正在试图执行任务的上下文，从多个算法中选择用于处理特定任务的算法。 数据验证实例 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677// 数据验证对象function Validator(&#123;config=&#123;&#125;&#125;=&#123;config:&#123;&#125;&#125;) &#123; this.config = config; this.message = [];&#125;Validator.prototype.validate = function (data) &#123; // 重置所有消息 this.message = []; for (const key in data) &#123; if (data.hasOwnProperty(key)) &#123; const value = data[key]; let checkers = this.config[key]; for (const checker of checkers) &#123; if (!checker) &#123; // 没有验证则不需要验证 continue; &#125; let checkType = this[checker]; if (!checkType) &#123; throw &#123; name: 'ValidationError', message: 'No handler to validate' + checker &#125;; &#125; // true 验证ok let result_ok = checkType.validate(data[key]); if (!result_ok.pass) &#123; this.message.push(&#123;...result_ok,instructions:checkType.instructions&#125;); &#125; &#125; &#125; &#125; return this.hasError();&#125;// 帮助方法Validator.prototype.hasError = function () &#123; return this.message.length !== 0;&#125;Validator.prototype.isEmpty = &#123; validate: function (data) &#123; let Questionns = data.Questionns; for (let i = 0; i &lt; Questionns.length; i++) &#123; const question = Questionns[i]; // 如果不是必要则不需要验证 if (question.IsMust !=1) &#123; continue; &#125; let checked = false; for (let j = 0; j &lt; question.Answers.length; j++) &#123; const answer = question.Answers[j]; if (answer.IsSelect=="true") &#123; checked = 1; &#125; for (let k = 0; k &lt; answer.remarklist.length; k++) &#123; const remark = answer.remarklist[k]; if (remark.ismust &amp;&amp; (answer.OptionContent.split('@')[k+1]==''||answer.OptionContent.indexOf('@')==-1) &amp;&amp; answer.IsSelect=="true") &#123; checked = 2; &#125; &#125; &#125; if (checked &amp;&amp; checked!=2) &#123; continue; &#125;else&#123; // 没有勾选返回 return &#123; checked, pass:false, data:question &#125; &#125; &#125; return &#123; pass:true &#125; &#125;, instructions: 'isEmpty'&#125;]]></content>
@@ -271,6 +270,15 @@
     <title><![CDATA[工厂模式]]></title>
     <url>%2F%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[工厂模式,它通常在类或者类的静态方法中实现，具有以下目标 当创建相似对象时，执行重复操作。 在编译时不知道具体类型的情况下，为工厂客户提供一种创建对象的接口。通过工厂方法(或者类)创建的对象在设计上都继承了相同的父对象这个思想，它们都是实现专门功能的特定子类。有时候公共父类是一个包含了工厂方法的同一个类。 期望结果： 123456var car = CarMaker.factory('benz');var motor = CarMaker.factory('dajiang');var bike = CarMaker.factory('fenghuang');car.drive(); // 4个轮子motor.drive(); //2个轮子bike.drive(); //2个轮子 需要保证完全相等，且指针不变。 实现方法： 123456789101112131415161718192021222324252627282930313233// 父构造函数function CarMaker()&#123;&#125;// a method of the parentCarMaker.prototype.drive = function()&#123; return `Vroom,I have $&#123;this.wheel&#125; wheels`;&#125;//静态工厂方法CarMaker.factory = function(type)&#123; var constr = type,newcar; // 如果构造函数不再在，则报错 if(typeof CarMaker[constr] !=="function")&#123; throw&#123; name:'Error', message:constr+"doesn't exist" &#125; &#125; // 继承父类 CarMaker[constr].prototype = new CarMaker(); newcar = new CarMaker[constr](); return newcar;&#125; // 定义不同类型的车子CarMaker.car = function()&#123; this.wheel = 4;&#125;CarMaker.motor = function()&#123; this.wheel = 2;&#125;CarMaker.bike = function()&#123; this.wheel = 2;&#125;]]></content>
+      <categories>
+        <category>书籍笔记</category>
+        <category>javascript模式</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[单例模式]]></title>
+    <url>%2FjavascriptModel%2F</url>
+    <content type="text"><![CDATA[期望结果： 123var uni = new universe();var uni2 = new universe();nni === uni2 // true; 需要保证完全相等，且指针不变。 实现方法：可以使用，静态属性缓存实例。 123456789function Universe() &#123; if(typeof Universe.instance === "object")&#123; return Universe.instance; &#125; this.name = '小明'; this.age = 8 Universe.instance = this; // 隐式返回this;&#125;]]></content>
       <categories>
         <category>书籍笔记</category>
         <category>javascript模式</category>
