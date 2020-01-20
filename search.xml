@@ -3,7 +3,11 @@
   <entry>
     <title><![CDATA[Vue源码解析思路总结]]></title>
     <url>%2FVue%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93%2F</url>
-    <content type="text"></content>
+    <content type="text"><![CDATA[编译的作用：用于收集依赖。生成虚拟DOM节约性能。]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Vue</category>
+      </categories>
   </entry>
   <entry>
     <title><![CDATA[女性脑]]></title>
@@ -37,7 +41,7 @@
   <entry>
     <title><![CDATA[晨间日记 (第一轮)]]></title>
     <url>%2F%E6%97%A5%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[主要承诺：每天写一篇日记。 开始时间：2019-12-23 背景让自己有个计划，好去全世界看看。 规则 每天写一篇日记，内容可短，可重复，如果看了有看了文章的心得也会再次总结。 我将在这里跟踪我的进展并推送给GitHub。 如果出现重要的事情，我会跳过这一天不算在100天之中。 阶段 1天 启动日记的编写前端MAP 7天 30天 60天 90天 100天 额外的补充 不要连续两天跳过，并且两周之内跳过一天 日志模板123456789### 第N天#### 昨天的进步#### 思想和情绪#### 今天的计划--- 第1天 2019年12月23日昨天的进步制定今天的日记计划 思想和情绪早晨看了一篇文章。别让自己‘墙了自己’感觉看完自己很有斗志，多看看这样的文章挺好。 文章总结 1.敢想 2.视野的重要性 3.英语对于开阔视野的重要性 4.学习技术不要太偏执，技多不压身，学习一门语言应该有逻辑的思考整个架构模型、设计模式，站在整个技术的上帝视角来学习技术。 5.看完之后觉得自己好年轻。。。（重点.jpg） 今天的计划 详细了解移动端适配原理 自考本科高数段的学习。 Vue源码的视频课程学习。 第2天 2019年12月24日昨天的进步理解CSS基于物理尺寸一样原理，文字适配，图片适配。 思想和情绪对于昨天理解移动端适配还有一点不懂，今天打算直接看源码理解。然后写一篇总结文章。总的来说，没有完成昨天的计划，但在以后的计划规划中要注意合理性。 今天的计划1.继续了解适配原理，写一篇总结文章。2.高数学习 第3天 2019年12月25日昨天的进步理解lib-flexible方案的缺点，和vw适配方案。完成移动端适配的总结 思想和情绪昨天对移动方案的理解还不错，高数暂时搁置。 今天的计划了解vw的文字适配，Vue源码的学习。高数的学习。 第4天 2019年12月26日昨天的进步vw方案文字适配文字是整体放大，没有学习Vue源码，改变计划学习typecript 思想和情绪需要加强效率，合理安排计划，不是很满意。 今天的计划学习typeScript和ES6 第5天 2019年12月27日昨天的进步学习高数曲面方程 思想和情绪高数还是需要花时间的，希望啃下来。 今天的计划学习高数，学习typeScipt 第6天 2019年12月30日昨天的进步周末HI了两天。 余年庆挺好看的。 思想和情绪呀，很难受没坚持下来，特别是作息没坚持下来。 今天的计划学习高数，学习typeScipt 第7天 2020年1月3日昨天的进步学习了一小时数学。曲线旋转方程在Oyz平面的曲线围绕Z旋转因为 曲线f(y,z)=0 又 旋转中的一点p*的z坐标不变且相交于Z轴M，|MP| = \sqrt{x^2+y^2} 又 p在曲线C上,$$f(|MP|=|MP|) $$ 所以 满足f(p*,z) 所以 旋转曲面上的点满足 f(\pm\sqrt{x^2+y^2},z) 思想和情绪新年flag: 养成好的睡眠习惯 再想想 今天的计划学习高数，学习typeScipt 第8天 2020年1月6日昨天的进步《习惯的力量》 习惯三要素：线索、行为、奖赏 线索：地点、心情、心态、上下文，这些会引导自己做出相应行为。 行为：某些习惯需要的动作。 奖赏：分自然奖赏和设计规则奖赏 思想和情绪一定要完成养成早睡早起的习惯，让自己变得从容。 今天的计划1. 跑步。 2. 配置个人博客服务器 3. 地铁上学习typeScript 第9天 2020年1月7日昨天的进步学习typeScript 思想和情绪今天状态80分，目标明确。 今天的计划 争取回家就躺着睡觉 学习typeScript 第10天 2020年1月8日昨天的进步typeScript 进度：$\frac{1}{3}$ 思想和情绪听了《富爸爸投资指南》，满是斗志哈哈~ 今天的计划《富爸爸投资指南》学习typeScript 第11天 2020年1月9日昨天的进步typeScript 进度：$\frac{2}{5}$跑步半小时 思想和情绪typescript的进度不是很快，今天加油。 今天的计划 学习typeScript 学习1小时高数 第12天 2020年1月14日昨天的进步typeScript 进度：$\frac{4}{5}$ 思想和情绪加油。不是很满意 今天的计划 学习typeScript 第13天 2020年1月15日昨天的进步typeScript 进度：完成 思想和情绪没有准时睡觉，很难受。 今天的计划 准时睡觉。 准时睡觉。 准时睡觉。 第14天 2020年1月16日昨天的进步vue的源码解析：大致流程 进度：$\frac{1}{2}$睡觉满意度：$\frac{7}{10}$睡觉时长：7个小时30分钟计划作息天数：1 天 思想和情绪睡的不错很精神 今天的计划 完成一篇Vue源码解析思路总结 准时睡觉。 准时睡觉。 准时睡觉。]]></content>
+    <content type="text"><![CDATA[主要承诺：每天写一篇日记。 开始时间：2019-12-23 背景让自己有个计划，好去全世界看看。 规则 每天写一篇日记，内容可短，可重复，如果看了有看了文章的心得也会再次总结。 我将在这里跟踪我的进展并推送给GitHub。 如果出现重要的事情，我会跳过这一天不算在100天之中。 阶段 1天 启动日记的编写前端MAP 7天 30天 60天 90天 100天 额外的补充 不要连续两天跳过，并且两周之内跳过一天 日志模板123456789### 第N天#### 昨天的进步#### 思想和情绪#### 今天的计划--- 第1天 2019年12月23日昨天的进步制定今天的日记计划 思想和情绪早晨看了一篇文章。别让自己‘墙了自己’感觉看完自己很有斗志，多看看这样的文章挺好。 文章总结 1.敢想 2.视野的重要性 3.英语对于开阔视野的重要性 4.学习技术不要太偏执，技多不压身，学习一门语言应该有逻辑的思考整个架构模型、设计模式，站在整个技术的上帝视角来学习技术。 5.看完之后觉得自己好年轻。。。（重点.jpg） 今天的计划 详细了解移动端适配原理 自考本科高数段的学习。 Vue源码的视频课程学习。 第2天 2019年12月24日昨天的进步理解CSS基于物理尺寸一样原理，文字适配，图片适配。 思想和情绪对于昨天理解移动端适配还有一点不懂，今天打算直接看源码理解。然后写一篇总结文章。总的来说，没有完成昨天的计划，但在以后的计划规划中要注意合理性。 今天的计划1.继续了解适配原理，写一篇总结文章。2.高数学习 第3天 2019年12月25日昨天的进步理解lib-flexible方案的缺点，和vw适配方案。完成移动端适配的总结 思想和情绪昨天对移动方案的理解还不错，高数暂时搁置。 今天的计划了解vw的文字适配，Vue源码的学习。高数的学习。 第4天 2019年12月26日昨天的进步vw方案文字适配文字是整体放大，没有学习Vue源码，改变计划学习typecript 思想和情绪需要加强效率，合理安排计划，不是很满意。 今天的计划学习typeScript和ES6 第5天 2019年12月27日昨天的进步学习高数曲面方程 思想和情绪高数还是需要花时间的，希望啃下来。 今天的计划学习高数，学习typeScipt 第6天 2019年12月30日昨天的进步周末HI了两天。 余年庆挺好看的。 思想和情绪呀，很难受没坚持下来，特别是作息没坚持下来。 今天的计划学习高数，学习typeScipt 第7天 2020年1月3日昨天的进步学习了一小时数学。曲线旋转方程在Oyz平面的曲线围绕Z旋转因为 曲线f(y,z)=0 又 旋转中的一点p*的z坐标不变且相交于Z轴M，|MP| = \sqrt{x^2+y^2} 又 p在曲线C上,$$f(|MP|=|MP|) $$ 所以 满足f(p*,z) 所以 旋转曲面上的点满足 f(\pm\sqrt{x^2+y^2},z) 思想和情绪新年flag: 养成好的睡眠习惯 再想想 今天的计划学习高数，学习typeScipt 第8天 2020年1月6日昨天的进步《习惯的力量》 习惯三要素：线索、行为、奖赏 线索：地点、心情、心态、上下文，这些会引导自己做出相应行为。 行为：某些习惯需要的动作。 奖赏：分自然奖赏和设计规则奖赏 思想和情绪一定要完成养成早睡早起的习惯，让自己变得从容。 今天的计划1. 跑步。 2. 配置个人博客服务器 3. 地铁上学习typeScript 第9天 2020年1月7日昨天的进步学习typeScript 思想和情绪今天状态80分，目标明确。 今天的计划 争取回家就躺着睡觉 学习typeScript 第10天 2020年1月8日昨天的进步typeScript 进度：$\frac{1}{3}$ 思想和情绪听了《富爸爸投资指南》，满是斗志哈哈~ 今天的计划《富爸爸投资指南》学习typeScript 第11天 2020年1月9日昨天的进步typeScript 进度：$\frac{2}{5}$跑步半小时 思想和情绪typescript的进度不是很快，今天加油。 今天的计划 学习typeScript 学习1小时高数 第12天 2020年1月14日昨天的进步typeScript 进度：$\frac{4}{5}$ 思想和情绪加油。不是很满意 今天的计划 学习typeScript 第13天 2020年1月15日昨天的进步typeScript 进度：完成 思想和情绪没有准时睡觉，很难受。 今天的计划 准时睡觉。 准时睡觉。 准时睡觉。 第14天 2020年1月16日昨天的进步vue的源码解析：大致流程 进度：$\frac{1}{2}$ 思想和情绪睡的不错很精神 今天的计划 完成一篇Vue源码解析思路总结 准时睡觉。 准时睡觉。 准时睡觉。 第15天 2020年1月20日昨天的进步vue的源码解析：大致流程 进度：100% 思想和情绪还不错，希望更加有效率 今天的计划 学习了解SSR 开始学习node]]></content>
       <categories>
         <category>100天挑战</category>
         <category>晨间日记</category>
@@ -63,11 +67,11 @@
     <url>%2Fscss%2F</url>
     <content type="text"><![CDATA[变量 - variables12345$primary-color: red;div.box&#123; color: $primary-color;&#125; 嵌套 - nesting123456$primary-color: red;div &#123; &amp;.box&#123; color: $primary-color; &#125;&#125; 嵌套式调用父选择器12345div&#123; &amp;:hover&#123; color: red; &#125;&#125; 嵌套属性1234567.nav &#123; font : &#123; size:15px; color:red: &#125;&#125; 混合 - mixins重点 默认值 关键词参数 参数变量 12345678910111213141516171819202122232425262728293031323334353637383940@mixin name (param1,param2...)&#123; ...&#125;// 默认值@mixin border ($width:1px,$color:green)&#123; border :&#123; color:color, width:width &#125;&#125;.box&#123; @include border (12px,red); font-size: 12px;&#125;div&#123; @include border ($color:red); font-size: 12px;&#125;// 参数列表// 可以使用参数变量 … 声明（写在参数的最后方）告诉 Sass 将这些参数视为值列表处理@mixin box-shadow($shadows...) &#123; -moz-box-shadow: $shadows; -webkit-box-shadow: $shadows; box-shadow: $shadows;&#125;.shadows &#123; @include box-shadow(0px 4px 5px #666, 2px 6px 10px #999);// 参数变量也可以用在引用混合指令的时候 (@include)，与平时用法一样，将一串值列表中的值逐条作为参数引用：@mixin colors($text, $background, $border) &#123; color: $text; background-color: $background; border-color: $border;&#125;$values: #ff0000, #00ff00, #0000ff;.primary &#123; @include colors($values...);&#125; 继承]]></content>
       <categories>
-        <category>前端技术学习记录</category>
+        <category>前端</category>
         <category>scss</category>
       </categories>
       <tags>
-        <tag>前端技术学习记录</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -123,11 +127,11 @@
     <url>%2Fc-learn%2F</url>
     <content type="text"><![CDATA[主要承诺：C# 学习笔记的记录 开始时间：2019-7-15 背景目前工作的后端技术栈是.net，所以有必要学习和对后续学习其他后端语言打好一点基础。 规则 尽量快速掌握C#，并实践 复习该笔记。 阶段 1天 7天 30天 60天 90天 100天 额外的补充 难点等深度扩展，会另写一篇文章进行记录。 日志模板123456789### 第N天#### 学习节点标题 -内容：笔记#### 思想和情绪#### 明天的计划--- 第1天 2019年8月7日C#简介C# 是专为公共语言基础结构（CLI）设计的。CLI 由可执行代码和运行时环境组成，允许在不同的计算机平台和体系结构上使用各种高级语言。 .Net 框架（.Net Framework）.Net 框架应用程序是多平台的应用程序。框架的设计方式使它适用于下列各种语言：C#、C++、Visual Basic、Jscript、COBOL 等等。所有这些语言可以访问框架，彼此之间也可以互相交互。 .Net 框架由一个巨大的代码库组成，用于 C# 等客户端语言。下面列出一些 .Net 框架的组件： 公共语言运行库（Common Language Runtime - CLR） .Net 框架类库（.Net Framework Class Library） 公共语言规范（Common Language Specification） 通用类型系统（Common Type System） 元数据（Metadata）和组件（Assemblies） Windows 窗体（Windows Forms） ASP.Net 和 ASP.Net AJAX ADO.Net Windows 工作流基础（Windows Workflow Foundation - WF） Windows 显示基础（Windows Presentation Foundation） Windows 通信基础（Windows Communication Foundation - WCF） LINQ 思想和情绪明天的计划 第2天 2019年8月8日C# 数据类型在 C# 中，变量分为以下几种类型： 值类型（Value types） 引用类型（Reference types） 指针类型（Pointer types） 动态类型与对象类型相似，但是对象类型变量的类型检查是在编译时发生的，而动态类型变量的类型检查是在运行时发生的。 思想和情绪明天的计划]]></content>
       <categories>
-        <category>前端技术学习记录</category>
+        <category>前端</category>
         <category>C#</category>
       </categories>
       <tags>
-        <tag>前端技术学习记录</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -185,15 +189,27 @@
       </categories>
   </entry>
   <entry>
+    <title><![CDATA[性能优化-SSR]]></title>
+    <url>%2FSSR%2F</url>
+    <content type="text"></content>
+      <categories>
+        <category>前端</category>
+        <category>Vue</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[Vue-组件设计]]></title>
     <url>%2F%E7%BB%84%E4%BB%B6%E8%AE%BE%E8%AE%A1%2F</url>
     <content type="text"><![CDATA[封装注意 .sync 修饰符，指令的灵活运用。]]></content>
       <categories>
-        <category>前端技术学习记录</category>
-        <category>VUE</category>
+        <category>前端</category>
+        <category>Vue</category>
       </categories>
       <tags>
-        <tag>前端技术学习记录</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -201,23 +217,11 @@
     <url>%2Fnode-learn%2F</url>
     <content type="text"><![CDATA[主要承诺：node 学习笔记的记录 开始时间：2019-7-15 背景在开启多方便学习记录的同时，开启技术学习记录。 规则 尽量快速掌握node，并实践 复习该笔记。 阶段 1天 7天 30天 60天 90天 100天 额外的补充 难点等深度扩展，会另写一篇文章进行记录。 日志模板123456789### 第N天#### 今天的进步#### 思想和情绪#### 明天的计划--- 第1天 2019年7月15日今天的进步思想和情绪明天的计划]]></content>
       <categories>
-        <category>前端技术学习记录</category>
+        <category>前端</category>
         <category>node</category>
       </categories>
       <tags>
-        <tag>前端技术学习记录</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title><![CDATA[性能优化-SSR]]></title>
-    <url>%2FSSR%2F</url>
-    <content type="text"></content>
-      <categories>
-        <category>前端技术学习记录</category>
-        <category>VUE</category>
-      </categories>
-      <tags>
-        <tag>前端技术学习记录</tag>
+        <tag>前端</tag>
       </tags>
   </entry>
   <entry>
@@ -263,15 +267,6 @@
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[单例模式]]></title>
-    <url>%2FjavascriptModel%2F</url>
-    <content type="text"><![CDATA[期望结果： 123var uni = new universe();var uni2 = new universe();nni === uni2 // true; 需要保证完全相等，且指针不变。 实现方法：可以使用，静态属性缓存实例。 123456789function Universe() &#123; if(typeof Universe.instance === "object")&#123; return Universe.instance; &#125; this.name = '小明'; this.age = 8 Universe.instance = this; // 隐式返回this;&#125;]]></content>
-      <categories>
-        <category>书籍笔记</category>
-        <category>javascript模式</category>
-      </categories>
-  </entry>
-  <entry>
     <title><![CDATA[策略模式]]></title>
     <url>%2F%E7%AD%96%E7%95%A5%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[策略模式支持您在运行时选择算法。代码客户端可以使用同一个接口来工作，但是它却根据客户正在试图执行任务的上下文，从多个算法中选择用于处理特定任务的算法。 数据验证实例 1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162636465666768697071727374757677// 数据验证对象function Validator(&#123;config=&#123;&#125;&#125;=&#123;config:&#123;&#125;&#125;) &#123; this.config = config; this.message = [];&#125;Validator.prototype.validate = function (data) &#123; // 重置所有消息 this.message = []; for (const key in data) &#123; if (data.hasOwnProperty(key)) &#123; const value = data[key]; let checkers = this.config[key]; for (const checker of checkers) &#123; if (!checker) &#123; // 没有验证则不需要验证 continue; &#125; let checkType = this[checker]; if (!checkType) &#123; throw &#123; name: 'ValidationError', message: 'No handler to validate' + checker &#125;; &#125; // true 验证ok let result_ok = checkType.validate(data[key]); if (!result_ok.pass) &#123; this.message.push(&#123;...result_ok,instructions:checkType.instructions&#125;); &#125; &#125; &#125; &#125; return this.hasError();&#125;// 帮助方法Validator.prototype.hasError = function () &#123; return this.message.length !== 0;&#125;Validator.prototype.isEmpty = &#123; validate: function (data) &#123; let Questionns = data.Questionns; for (let i = 0; i &lt; Questionns.length; i++) &#123; const question = Questionns[i]; // 如果不是必要则不需要验证 if (question.IsMust !=1) &#123; continue; &#125; let checked = false; for (let j = 0; j &lt; question.Answers.length; j++) &#123; const answer = question.Answers[j]; if (answer.IsSelect=="true") &#123; checked = 1; &#125; for (let k = 0; k &lt; answer.remarklist.length; k++) &#123; const remark = answer.remarklist[k]; if (remark.ismust &amp;&amp; (answer.OptionContent.split('@')[k+1]==''||answer.OptionContent.indexOf('@')==-1) &amp;&amp; answer.IsSelect=="true") &#123; checked = 2; &#125; &#125; &#125; if (checked &amp;&amp; checked!=2) &#123; continue; &#125;else&#123; // 没有勾选返回 return &#123; checked, pass:false, data:question &#125; &#125; &#125; return &#123; pass:true &#125; &#125;, instructions: 'isEmpty'&#125;]]></content>
@@ -296,6 +291,15 @@
       <categories>
         <category>前端</category>
         <category>JS</category>
+      </categories>
+  </entry>
+  <entry>
+    <title><![CDATA[单例模式]]></title>
+    <url>%2FjavascriptModel%2F</url>
+    <content type="text"><![CDATA[期望结果： 123var uni = new universe();var uni2 = new universe();nni === uni2 // true; 需要保证完全相等，且指针不变。 实现方法：可以使用，静态属性缓存实例。 123456789function Universe() &#123; if(typeof Universe.instance === "object")&#123; return Universe.instance; &#125; this.name = '小明'; this.age = 8 Universe.instance = this; // 隐式返回this;&#125;]]></content>
+      <categories>
+        <category>书籍笔记</category>
+        <category>javascript模式</category>
       </categories>
   </entry>
   <entry>
