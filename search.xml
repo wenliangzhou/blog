@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title><![CDATA[ASCII，Unicode，UTF-8，GBK 区别]]></title>
+    <url>%2F%E5%8C%BA%E5%88%AB%2F</url>
+    <content type="text"><![CDATA[编码历史与区别 很久很久以前，有一群人，他们决定用8个可以开合的晶体管来组合成不同的状态，以表示世界上的万物。他们看到8个开关状态是好的，于是他们把这称为”字节”。]]></content>
+  </entry>
+  <entry>
+    <title><![CDATA[正则表达式]]></title>
+    <url>%2F%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F%2F</url>
+    <content type="text"><![CDATA[项目介绍 项目名称：开户 项目描述：本项目是用于收集开立股票、期货等证券账户所需的资料，并在中台进行资料审核的一个系统。 业务流程1. 前端业务流程图12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152graph TDA(手机号码注册)B(流程选择) C(开立账户类型)D1([&quot;根据不同地区的用户区分不同的流程，如香港、大陆、台湾等流程&quot;])D(大陆身份证信息) E(香港证件信息)Com1[/香港身份证/] Com2[/护照信息/]F(&quot;大陆：电子邮箱和住宅地址&quot;)G(&quot;香港：电子邮箱和住宅地址&quot;)H(&quot;就业状况&quot;)I(&quot;问卷模块&quot;)N(&quot;风险披露声明&quot;)O(&quot;见证方式选择&quot;)Q(&quot;大陆银行卡银联验证&quot;)R(&quot;大头照&quot;)S(&quot;录制视频&quot;)T(&quot;电子手写签名&quot;)U(&quot;确认开户书&quot;)V(&quot;开通状态&quot;)W(&quot;网站转账户口确认&quot;)X(&quot;网站转账转账方式说明&quot;)Y(&quot;网站转账转账方式上传转账证明&quot;)Z(&quot;支票邮寄方式说明&quot;)AA(&quot;现场见证方式说明&quot;)AB(&quot;纸质签名&quot;)C1&#123;大陆用户?&#125;C2&#123;香港用户?&#125;C3&#123;CA?&#125;C4&#123;转账?&#125;C5&#123;邮寄?&#125;C6&#123;现场?&#125;A --&gt; BB --&gt; CD1 -.- BC --&gt; C1C --&gt; C2C1 --&gt; DC2 --&gt; ECom1 --- ECom2 --- ED --&gt; FE --&gt; GF --&gt; HG --&gt; HH --&gt; I --&gt; N --&gt; OO --&gt; C3 --&gt; Q --&gt; R --&gt; S --&gt; ABO --&gt; C4 --&gt; W --&gt; X --&gt; Y --&gt; ABO --&gt; C5 --&gt; Z --&gt; ABO --&gt; C6 --&gt; AA --&gt; ABAB --&gt; T --&gt; U --&gt; V 2. 中台业务流程图1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950graph TDC(待认领)D(一审未审核)E(一审再审核)F(一审已审核清单)F1(一审驳回清单)G(二审待认领)H(二审未审核)I(二审驳回清单)J(二审已审核清单)K(数据提交中)O(一审回收清单)P(二审回收清单)R(一审可投递清单)S(二审可投递清单)AA(&quot;业务处理(改)&quot;)AB(&quot;业务查询(查)&quot;)AC(业务统计)AD(系统管理) -.- D3([&quot;配置问卷、短信范本&quot;])AF(控制面板) -.- D4([&quot;角色管理&quot;])C1&#123;审核通过?&#125;C2&#123;审核通过?&#125;A1&gt;通过]A2&gt;驳回]A3&gt;通过]A4&gt;驳回]A5&gt;驳回]A6&gt;认领]A7&gt;回收]A8&gt;认领]A9&gt;回收]AA --&gt; C --&gt; A6 --&gt; D --&gt; C1 --&gt; A1A1--&gt; FA1 --&gt; RA1 --继续进行二审--&gt; GA6 --&gt; O --&gt; A7 --&gt; CC1 --&gt; A2--&gt; F1 &amp; KG --&gt; A8 --&gt; H --&gt; C2A8 --&gt; P --&gt; A9 --&gt; GC2 --&gt; A3 --&gt; JA3 --&gt; SC2 --&gt; A4 --&gt; I &amp; EE --&gt; A5A5 --&gt; KK --&quot;用户再次提交完成后，再次进入人员A的认领清单&quot;--&gt; DO -.-|未审核客户可以再回收清单中进行回收操作| DD1([&quot;可投递清单可导出资料，修改开户状态&quot;])D2([&quot;可投递清单可导出资料，修改开户状态&quot;])S -.- D1R -.- D2 项目代码结构 项目组件介绍项目工作流开户3.0]]></content>
+  </entry>
+  <entry>
     <title><![CDATA[Vue源码解析思路总结]]></title>
     <url>%2FVue%E6%BA%90%E7%A0%81%E8%A7%A3%E6%9E%90%E6%80%9D%E8%B7%AF%E6%80%BB%E7%BB%93%2F</url>
     <content type="text"><![CDATA[编译的作用：用于收集依赖。生成虚拟DOM节约性能。]]></content>
@@ -105,18 +115,18 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[函数柯里化]]></title>
-    <url>%2F%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96%2F</url>
-    <content type="text"></content>
+    <title><![CDATA[高级程序设计笔记]]></title>
+    <url>%2FJavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0%2F</url>
+    <content type="text"><![CDATA[DOM概念文档对象模型（DOM，Document Object Model）是针对 XML 但经过扩展用于 HTML 的应用程序编程接口（API，Application Programming Interface）。通过 DOM 创建的这个表示文档的树形图，开发人员获得了控制页面内容和结构的主动权。借助DOM 提供的 API，开发人员可以轻松自如地删除、添加、替换或修改任何节点。 小结理解 DOM 的关键，就是理解 DOM 对性能的影响。DOM 操作往往是 JavaScript 程序中开销最大的 2 部分，而因访问 NodeList 导致的问题为最多。NodeList 对象都是“动态的”，这就意味着每次访问NodeList 对象，都会运行一次查询。有鉴于此，最好的办法就是尽量减少 DOM 操作。 内存和性能由于事件处理程序可以为现代 Web 应用程序提供交互能力，因此许多开发人员会不分青红皂白地向页面中添加大量的处理程序。在创建 GUI 的语言（如 C#）中，为 GUI 中的每个按钮添加一个 onclick事件处理程序是司空见惯的事，而且这样做也不会导致什么问题。可是在 JavaScript 中，添加到页面上的事件处理程序数量将直接关系到页面的整体运行性能。导致这一问题的原因是多方面的。首先，每个函数都是对象，都会占用内存；内存中的对象越多，性能就越差。其次，必须事先指定所有事件处理程序而导致的 DOM 访问次数，会延迟整个页面的交互就绪时间。事实上，从如何利用好事件处理程序的角度出发，还是有一些方法能够提升性能的。 事件委托可以解决性能，和设置未来添加的元素的事件 移除事件处理程序在两种情况下，可能会造成上述问题。第一种情况就是从文档中移除带有事件处理程序的元素时。这可能是通过纯粹的 DOM 操作，例如使用 removeChild()和 replaceChild()方法，但更多地是发生在使用 innerHTML 替换页面中某一部分的时候。如果带有事件处理程序的元素被 innerHTML 删除了，那么原来添加到元素中的事件处理程序极有可能无法被当作垃圾回收。来看下面的例子。 函数柯里化1234567891011121314function curry(fn)&#123; var args = Array.prototype.slice.call(arguments, 1); return function()&#123; var innerArgs = Array.prototype.slice.call(arguments); var finalArgs = args.concat(innerArgs); return fn.apply(null, finalArgs); &#125;; &#125;function add(num1, num2)&#123; return num1 + num2; &#125; var curriedAdd = curry(add, 5); alert(curriedAdd(3)); //8 当使用 bind()时，它会返回绑定到给定环境的函数，并且可能它其中某些函数参数已经被设好。当你想除了 event 对象再额外给事件处理程序传递参数时，这非常有用，例如： 123456789ECMAScript 5 的 bind()方法也实现函数柯里化，只要在 this 的值之后再传入另一个参数即可。var handler = &#123; message: "Event handled", handleClick: function(name, event)&#123; alert(this.message + ":" + name + ":" + event.type); &#125; &#125;; var btn = document.getElementById("my-btn"); EventUtil.addHandler(btn, "click", handler.handleClick.bind(handler, "my-btn")); JavaScript 中的柯里化函数和绑定函数提供了强大的动态函数创建功能。使用 bind()还是 curry()要根据是否需要 object 对象响应来决定。它们都能用于创建复杂的算法和功能，当然两者都不应滥用，因为每个函数都会带来额外的开销。 自定义事件12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849function EventTarget() &#123; this.handlers = &#123;&#125;; &#125;EventTarget.prototype = &#123; constructor: EventTarget, addHandler: function (type, handler) &#123; if (typeof this.handlers[type] == "undefined") &#123; this.handlers[type] = []; &#125; this.handlers[type].push(handler); &#125;, fire: function (event) &#123; if (!event.target) &#123; event.target = this; &#125; if (this.handlers[event.type] instanceof Array) &#123; var handlers = this.handlers[event.type]; for (var i = 0, len = handlers.length; i &lt; len; i++) &#123; handlers[i](event); &#125; &#125; &#125;, removeHandler: function (type, handler) &#123; if (this.handlers[type] instanceof Array) &#123; var handlers = this.handlers[type]; for (var i = 0, len = handlers.length; i &lt; len; i++) &#123; if (handlers[i] === handler) &#123; break; &#125; &#125; handlers.splice(i, 1); &#125; &#125;&#125;;function handleMessage(event)&#123; alert("Message received: " + event.message); &#125; //创建一个新对象var target = new EventTarget(); //添加一个事件处理程序target.addHandler("message", handleMessage); //触发事件target.fire(&#123; type: "message", message: "Hello world!"&#125;); //删除事件处理程序target.removeHandler("message", handleMessage); //再次，应没有处理程序target.fire(&#123; type: "message", message: "Hello world!"&#125;);]]></content>
       <categories>
         <category>书籍笔记</category>
         <category>JavaScript高级程序设计</category>
       </categories>
   </entry>
   <entry>
-    <title><![CDATA[高级程序设计笔记]]></title>
-    <url>%2FJavaScript%E9%AB%98%E7%BA%A7%E7%A8%8B%E5%BA%8F%E8%AE%BE%E8%AE%A1%E7%AC%94%E8%AE%B0%2F</url>
-    <content type="text"><![CDATA[DOM概念文档对象模型（DOM，Document Object Model）是针对 XML 但经过扩展用于 HTML 的应用程序编程接口（API，Application Programming Interface）。通过 DOM 创建的这个表示文档的树形图，开发人员获得了控制页面内容和结构的主动权。借助DOM 提供的 API，开发人员可以轻松自如地删除、添加、替换或修改任何节点。 小结理解 DOM 的关键，就是理解 DOM 对性能的影响。DOM 操作往往是 JavaScript 程序中开销最大的 2 部分，而因访问 NodeList 导致的问题为最多。NodeList 对象都是“动态的”，这就意味着每次访问NodeList 对象，都会运行一次查询。有鉴于此，最好的办法就是尽量减少 DOM 操作。 内存和性能由于事件处理程序可以为现代 Web 应用程序提供交互能力，因此许多开发人员会不分青红皂白地向页面中添加大量的处理程序。在创建 GUI 的语言（如 C#）中，为 GUI 中的每个按钮添加一个 onclick事件处理程序是司空见惯的事，而且这样做也不会导致什么问题。可是在 JavaScript 中，添加到页面上的事件处理程序数量将直接关系到页面的整体运行性能。导致这一问题的原因是多方面的。首先，每个函数都是对象，都会占用内存；内存中的对象越多，性能就越差。其次，必须事先指定所有事件处理程序而导致的 DOM 访问次数，会延迟整个页面的交互就绪时间。事实上，从如何利用好事件处理程序的角度出发，还是有一些方法能够提升性能的。 事件委托可以解决性能，和设置未来添加的元素的事件 移除事件处理程序在两种情况下，可能会造成上述问题。第一种情况就是从文档中移除带有事件处理程序的元素时。这可能是通过纯粹的 DOM 操作，例如使用 removeChild()和 replaceChild()方法，但更多地是发生在使用 innerHTML 替换页面中某一部分的时候。如果带有事件处理程序的元素被 innerHTML 删除了，那么原来添加到元素中的事件处理程序极有可能无法被当作垃圾回收。来看下面的例子。 函数柯里化1234567891011121314function curry(fn)&#123; var args = Array.prototype.slice.call(arguments, 1); return function()&#123; var innerArgs = Array.prototype.slice.call(arguments); var finalArgs = args.concat(innerArgs); return fn.apply(null, finalArgs); &#125;; &#125;function add(num1, num2)&#123; return num1 + num2; &#125; var curriedAdd = curry(add, 5); alert(curriedAdd(3)); //8 当使用 bind()时，它会返回绑定到给定环境的函数，并且可能它其中某些函数参数已经被设好。当你想除了 event 对象再额外给事件处理程序传递参数时，这非常有用，例如： 123456789ECMAScript 5 的 bind()方法也实现函数柯里化，只要在 this 的值之后再传入另一个参数即可。var handler = &#123; message: "Event handled", handleClick: function(name, event)&#123; alert(this.message + ":" + name + ":" + event.type); &#125; &#125;; var btn = document.getElementById("my-btn"); EventUtil.addHandler(btn, "click", handler.handleClick.bind(handler, "my-btn")); JavaScript 中的柯里化函数和绑定函数提供了强大的动态函数创建功能。使用 bind()还是 curry()要根据是否需要 object 对象响应来决定。它们都能用于创建复杂的算法和功能，当然两者都不应滥用，因为每个函数都会带来额外的开销。 自定义事件12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849function EventTarget() &#123; this.handlers = &#123;&#125;; &#125;EventTarget.prototype = &#123; constructor: EventTarget, addHandler: function (type, handler) &#123; if (typeof this.handlers[type] == "undefined") &#123; this.handlers[type] = []; &#125; this.handlers[type].push(handler); &#125;, fire: function (event) &#123; if (!event.target) &#123; event.target = this; &#125; if (this.handlers[event.type] instanceof Array) &#123; var handlers = this.handlers[event.type]; for (var i = 0, len = handlers.length; i &lt; len; i++) &#123; handlers[i](event); &#125; &#125; &#125;, removeHandler: function (type, handler) &#123; if (this.handlers[type] instanceof Array) &#123; var handlers = this.handlers[type]; for (var i = 0, len = handlers.length; i &lt; len; i++) &#123; if (handlers[i] === handler) &#123; break; &#125; &#125; handlers.splice(i, 1); &#125; &#125;&#125;;function handleMessage(event)&#123; alert("Message received: " + event.message); &#125; //创建一个新对象var target = new EventTarget(); //添加一个事件处理程序target.addHandler("message", handleMessage); //触发事件target.fire(&#123; type: "message", message: "Hello world!"&#125;); //删除事件处理程序target.removeHandler("message", handleMessage); //再次，应没有处理程序target.fire(&#123; type: "message", message: "Hello world!"&#125;);]]></content>
+    <title><![CDATA[函数柯里化]]></title>
+    <url>%2F%E5%87%BD%E6%95%B0%E6%9F%AF%E9%87%8C%E5%8C%96%2F</url>
+    <content type="text"></content>
       <categories>
         <category>书籍笔记</category>
         <category>JavaScript高级程序设计</category>
@@ -201,24 +211,24 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[Vue-组件设计]]></title>
-    <url>%2F%E7%BB%84%E4%BB%B6%E8%AE%BE%E8%AE%A1%2F</url>
-    <content type="text"><![CDATA[封装注意 .sync 修饰符，指令的灵活运用。]]></content>
-      <categories>
-        <category>前端</category>
-        <category>Vue</category>
-      </categories>
-      <tags>
-        <tag>前端</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[node-learn]]></title>
     <url>%2Fnode-learn%2F</url>
     <content type="text"><![CDATA[主要承诺：node 学习笔记的记录 开始时间：2019-7-15 背景在开启多方便学习记录的同时，开启技术学习记录。 规则 尽量快速掌握node，并实践 复习该笔记。 阶段 1天 7天 30天 60天 90天 100天 额外的补充 难点等深度扩展，会另写一篇文章进行记录。 日志模板123456789### 第N天#### 今天的进步#### 思想和情绪#### 明天的计划--- 第1天 2019年7月15日今天的进步思想和情绪明天的计划]]></content>
       <categories>
         <category>前端</category>
         <category>node</category>
+      </categories>
+      <tags>
+        <tag>前端</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Vue-组件设计]]></title>
+    <url>%2F%E7%BB%84%E4%BB%B6%E8%AE%BE%E8%AE%A1%2F</url>
+    <content type="text"><![CDATA[封装注意 .sync 修饰符，指令的灵活运用。]]></content>
+      <categories>
+        <category>前端</category>
+        <category>Vue</category>
       </categories>
       <tags>
         <tag>前端</tag>
@@ -276,6 +286,15 @@
       </categories>
   </entry>
   <entry>
+    <title><![CDATA[单例模式]]></title>
+    <url>%2FjavascriptModel%2F</url>
+    <content type="text"><![CDATA[期望结果： 123var uni = new universe();var uni2 = new universe();nni === uni2 // true; 需要保证完全相等，且指针不变。 实现方法：可以使用，静态属性缓存实例。 123456789function Universe() &#123; if(typeof Universe.instance === "object")&#123; return Universe.instance; &#125; this.name = '小明'; this.age = 8 Universe.instance = this; // 隐式返回this;&#125;]]></content>
+      <categories>
+        <category>书籍笔记</category>
+        <category>javascript模式</category>
+      </categories>
+  </entry>
+  <entry>
     <title><![CDATA[工厂模式]]></title>
     <url>%2F%E5%B7%A5%E5%8E%82%E6%A8%A1%E5%BC%8F%2F</url>
     <content type="text"><![CDATA[工厂模式,它通常在类或者类的静态方法中实现，具有以下目标 当创建相似对象时，执行重复操作。 在编译时不知道具体类型的情况下，为工厂客户提供一种创建对象的接口。通过工厂方法(或者类)创建的对象在设计上都继承了相同的父对象这个思想，它们都是实现专门功能的特定子类。有时候公共父类是一个包含了工厂方法的同一个类。 期望结果： 123456var car = CarMaker.factory('benz');var motor = CarMaker.factory('dajiang');var bike = CarMaker.factory('fenghuang');car.drive(); // 4个轮子motor.drive(); //2个轮子bike.drive(); //2个轮子 需要保证完全相等，且指针不变。 实现方法： 123456789101112131415161718192021222324252627282930313233// 父构造函数function CarMaker()&#123;&#125;// a method of the parentCarMaker.prototype.drive = function()&#123; return `Vroom,I have $&#123;this.wheel&#125; wheels`;&#125;//静态工厂方法CarMaker.factory = function(type)&#123; var constr = type,newcar; // 如果构造函数不再在，则报错 if(typeof CarMaker[constr] !=="function")&#123; throw&#123; name:'Error', message:constr+"doesn't exist" &#125; &#125; // 继承父类 CarMaker[constr].prototype = new CarMaker(); newcar = new CarMaker[constr](); return newcar;&#125; // 定义不同类型的车子CarMaker.car = function()&#123; this.wheel = 4;&#125;CarMaker.motor = function()&#123; this.wheel = 2;&#125;CarMaker.bike = function()&#123; this.wheel = 2;&#125;]]></content>
@@ -291,15 +310,6 @@
       <categories>
         <category>前端</category>
         <category>JS</category>
-      </categories>
-  </entry>
-  <entry>
-    <title><![CDATA[单例模式]]></title>
-    <url>%2FjavascriptModel%2F</url>
-    <content type="text"><![CDATA[期望结果： 123var uni = new universe();var uni2 = new universe();nni === uni2 // true; 需要保证完全相等，且指针不变。 实现方法：可以使用，静态属性缓存实例。 123456789function Universe() &#123; if(typeof Universe.instance === "object")&#123; return Universe.instance; &#125; this.name = '小明'; this.age = 8 Universe.instance = this; // 隐式返回this;&#125;]]></content>
-      <categories>
-        <category>书籍笔记</category>
-        <category>javascript模式</category>
       </categories>
   </entry>
   <entry>
