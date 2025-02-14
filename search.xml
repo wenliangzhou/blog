@@ -1,0 +1,549 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>《Foundations of computer science》</title>
+    <url>/FoundationsOfComputerScience/</url>
+    <content><![CDATA[<ul>
+<li><input checked="" disabled="" type="checkbox"> Storing reals</li>
+</ul>
+<span id="more"></span>
+
+<h3 id="Number-systems"><a href="#Number-systems" class="headerlink" title="Number systems"></a>Number systems</h3><h4 id="3-2-3-Storing-reals"><a href="#3-2-3-Storing-reals" class="headerlink" title="3.2.3 Storing reals"></a>3.2.3 Storing reals</h4><blockquote>
+<p>Real numbers with very large integral parts or very small fractional parts should not be stored in fixed-point representation.</p>
+</blockquote>
+<h5 id="Floating-point-representation"><a href="#Floating-point-representation" class="headerlink" title="Floating-point representation"></a>Floating-point representation</h5><p>show the code</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show_float_bit</span><span class="params">(<span class="keyword">float</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> *a = (<span class="keyword">int</span> *)(&amp;x);</span><br><span class="line">  <span class="keyword">int</span> len = <span class="keyword">sizeof</span>(x) * <span class="number">8</span>;</span><br><span class="line">  <span class="keyword">int</span> cun = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span> (len-- &gt; <span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 使用位运算判断其中每一位是否有为1</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, (*a) &amp; (t &lt;&lt; (<span class="number">31</span> - cun)) ? <span class="number">1</span> : <span class="number">0</span>);</span><br><span class="line">    cun++;</span><br><span class="line">    <span class="keyword">if</span> (cun == <span class="number">1</span> || cun == <span class="number">9</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">/* code */</span></span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">  <span class="comment">// int也需要和float同样的字节数</span></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;int字节数为： %lu&quot;</span>,<span class="keyword">sizeof</span>(cun));</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">float</span> var_runoob = <span class="number">5.75</span>;</span><br><span class="line">  show_float_bit(var_runoob);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 控制台输出：</span></span><br><span class="line"><span class="comment">// 0 10000001 01110000000000000000000</span></span><br><span class="line"><span class="comment">// int字节数为： 4</span></span><br></pre></td></tr></table></figure>
+
+
+
+]]></content>
+      <tags>
+        <tag>读书笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>UI库工程架构解析</title>
+    <url>/undefined/</url>
+    <content><![CDATA[<p>构建</p>
+<p>rollup<code>、</code>unbuild<code>、</code>esbuild<code>、</code>gulp<code>、</code>ts-morph<code>、</code>fast-glob</p>
+<ul>
+<li>rollup 打包工具</li>
+<li>unbuild 打包工具：打包声明、typeScript&amp;ESM runtime、打包多个类型、文件对文件传输</li>
+<li>esbuild 打包工具使用go语言写得，打包更快 ，节约内存、无第三方依赖、并行运行</li>
+<li>gulp 基于任务运行打包工具</li>
+<li>ts-morph 用于生产AST，根据AST生成代码，或修改代码。提供了简易的API来操作AST</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>Vue3-english</title>
+    <url>/Vue3-english/</url>
+    <content><![CDATA[<p>&lt;– more –&gt;</p>
+<p>You are reading the documentation for Vue3!</p>
+<p>document是指具体的某个文件，documentation指的是围绕某个主题解释的记录和文档。</p>
+<p>It builds on top of standard HTML,css and Javascript and provides a declarative and component-based programming model that helps you efficently develop user interfaces, be they simple or complex.</p>
+<p>The above example demonstrates the two features of Vue.</p>
+<p>You may already have questions - don’t worry. We will cover every detail in the rest documentation. for now, please read along so you can have a high-level understanding of what Vue offers.</p>
+<p>The web is extremely diverse - the things we build on web may vary drastically in from and scale. With that in mind, Vue is designed to be flexible and incrementally adoptable.</p>
+<p>形容词的叙述用法</p>
+<p>you are curious about what these terms mean, we discuss them in more detail in Ways of Using Vue.</p>
+<p>The knowledge gained along the way will stay useful as you grow to tackle more ambitions goals in the future.</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>Vue源码解析思路总结</title>
+    <url>/vue/</url>
+    <content><![CDATA[<p>编译的作用：用于收集依赖。生成虚拟DOM节约性能。</p>
+<p><img src="https://752758299-1300378859.cos.ap-shanghai.myqcloud.com/Vue%E7%BC%96%E8%AF%91.jpg" alt="Vue编译原理"></p>
+]]></content>
+  </entry>
+  <entry>
+    <title>english_learning_notes</title>
+    <url>/english_learning_notes/</url>
+    <content><![CDATA[<h3 id="宾语从句"><a href="#宾语从句" class="headerlink" title="宾语从句"></a>宾语从句</h3><blockquote>
+<p>宾语从句：从句在主句中充当宾语成分。 有些关系代词可以省略</p>
+</blockquote>
+<ul>
+<li>I am absolutely certain <del>that</del> the typhoon will hit TaiWan.</li>
+<li>I am absolutely certain <del>that</del> I left my purse on the desk.</li>
+</ul>
+<h3 id="定语从句："><a href="#定语从句：" class="headerlink" title="定语从句："></a>定语从句：</h3><blockquote>
+<p>定语从句：对先行词修饰或者限定。 有些关系代词可以省略</p>
+</blockquote>
+<ul>
+<li><p>china is not the country <del>that</del> it is.</p>
+</li>
+<li><p>The object <del>that/which</del> we are passing into <code>createApp</code> is in fact a component.</p>
+</li>
+<li><p>They are different interfaces <del>that are</del> powered by the exact same underlying system.</p>
+</li>
+<li><p>My first visit was to a space station <del>that is</del> considered the most modern in space.</p>
+</li>
+<li><p>Instead, create multiple small application instances and mount them on the elements <del>that</del> they are responsible for.</p>
+</li>
+</ul>
+<h3 id="形容词"><a href="#形容词" class="headerlink" title="形容词"></a>形容词</h3><blockquote>
+<p>形容词修饰名词构成名词短语</p>
+</blockquote>
+<ul>
+<li>One thing to note is that a ref will also be unwrapped.</li>
+</ul>
+<blockquote>
+<p>这里to note 不定式修饰名词构成名词短语，然后作主语</p>
+</blockquote>
+<h3 id="分词"><a href="#分词" class="headerlink" title="分词"></a>分词</h3><ul>
+<li>the template is getting a bit cluttered.  待学习</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>faying</title>
+    <url>/faying/</url>
+    <content><![CDATA[<h1 id="工具"><a href="#工具" class="headerlink" title="工具"></a>工具</h1><ul>
+<li>转音标  <a href="https://tophonetics.com/">https://tophonetics.com/</a></li>
+<li>开发一个跟读App</li>
+<li>单词读音 <a href="https://zh.forvo.com/search/bed/en_usa/">https://zh.forvo.com/search/bed/en_usa/</a></li>
+</ul>
+<h1 id="发音部位"><a href="#发音部位" class="headerlink" title="发音部位"></a>发音部位</h1><ul>
+<li>牙槽嵴   抵住或接触<ul>
+<li>/t/、/d/、/r/、/n/、/l/、/tʃ/、/dʒ/</li>
+</ul>
+</li>
+<li>上颚</li>
+<li>软腭 舌根顶住软腭<ul>
+<li>/k/、/g/、/ŋ/</li>
+</ul>
+</li>
+</ul>
+<h1 id="发音部位-1"><a href="#发音部位-1" class="headerlink" title="发音部位"></a>发音部位</h1><ul>
+<li>开口度主要在于下巴是否要下拉</li>
+<li>有些发音需要嘴唇、舌头、下巴都要紧张 /i:/、/u:/,有一些则相反/ʊ/、/ɪ/</li>
+</ul>
+<h1 id="发音基础"><a href="#发音基础" class="headerlink" title="发音基础"></a>发音基础</h1><ul>
+<li>元音：气流不受阻，调整舌位、嘴唇、口型等口腔位子形成的不同的声音</li>
+<li>辅音：气流受阻</li>
+<li>清音：不震动声带</li>
+<li>浊音：震动声带</li>
+</ul>
+]]></content>
+  </entry>
+  <entry>
+    <title>jenkins</title>
+    <url>/jenkins/</url>
+    <content><![CDATA[<p>哈哈</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>next-cloud</title>
+    <url>/next-cloud/</url>
+    <content><![CDATA[<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run --init --sig-proxy=false --name nextcloud-aio-mastercontainer --restart always --publish 8088:8080 --env SKIP_DOMAIN_VALIDATION=true --env APACHE_PORT=11000 --env APACHE_IP_BINDING=0.0.0.0 --volume nextcloud_aio_mastercontainer:/mnt/docker-aio-config --volume //var/run/docker.sock:/var/run/docker.sock:ro --env NEXTCLOUD_DATADIR=&quot;/run/desktop/mnt/host/d/ncdata&quot; --env NEXTCLOUD_UPLOAD_LIMIT=30G --env NEXTCLOUD_MOUNT=&quot;/run/desktop/mnt/host/d/ncdata/&quot; nextcloud/all-in-one:latest</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker exec -it nextcloud-aio-mastercontainer cat /mnt/docker-aio-config/data/configuration.json</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">git bash</span><br><span class="line">openssl req -x509 -newkey rsa:2048 -nodes -keyout /d/soft/nginx-1.24.0/ssl/key.key -out /d/soft/nginx-1.24.0/ssl/pem.pem -days 3650</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">Backup and restore</span><br><span class="line">Backup information</span><br><span class="line">This is your encryption password for backups: e5c923ea25875e9944955c8f475631337558e56a4bce31a7</span><br><span class="line"></span><br><span class="line">Please save this password in a safe place. You won&#39;t be able to restore from backup if you lose this password!</span><br><span class="line"></span><br><span class="line">All important data from your Nextcloud AIO instance such as the database, your files and the mastercontainer&#39;s configuration files, will be backed up.</span><br><span class="line"></span><br><span class="line">The backup uses a tool called BorgBackup, a well-known server backup tool that efficiently backs up your files and encrypts them on the fly.</span><br><span class="line"></span><br><span class="line">By using this tool, backups are incremental, differential, compressed and encrypted – so only the first backup will take a while. Further backups should be fast as only changes are taken into account.</span><br><span class="line"></span><br><span class="line">Backups will be created in the following directory on the host: &#x2F;mnt&#x2F;backup&#x2F;borg</span><br><span class="line"></span><br><span class="line">Be aware that this solution does not backup files and folders that are mounted into Nextcloud using the external storage app, but you can add further Docker volumes and host paths that you want to back up after the initial backup is done.</span><br><span class="line"></span><br><span class="line">For information about backup retention, see this.</span><br><span class="line"></span><br><span class="line">Daily backups can be enabled after the initial backup is done. Enabling this also allows you to enable an option to update all containers, Nextcloud, and its apps automatically.</span><br><span class="line"></span><br><span class="line">For further documentation and options on this backup solution refer to this section and below.</span><br><span class="line">Backup creation</span><br><span class="line">Clicking on the button below will create a backup.</span><br></pre></td></tr></table></figure>
+
+<p>arena repayment bounce bribe magnifier satchel moonscape rigging</p>
+<p>Initial Nextcloud username: admin<br>Initial Nextcloud password: 3fc56062e28cf3295f79a8f1944a8f677fc094214a86ee1e</p>
+]]></content>
+  </entry>
+  <entry>
+    <title>集中式和分布式版本控制系统的区别</title>
+    <url>/git/</url>
+    <content><![CDATA[<p>集中式git和分布式svn版本控制系统的区别</p>
+<span id="more"></span>
+
+<p><img src="/img/gitdifferent.jpg" alt="集中式和分布式版本控制系统的区别"></p>
+<h3 id="信息配置"><a href="#信息配置" class="headerlink" title="信息配置"></a>信息配置</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 全局信息配置（所有本地仓库提交时，都配置此信息）</span><br><span class="line">$ git config --global user.name &quot;John Doe&quot;</span><br><span class="line">$ git config --global user.email johndoe@example.com</span><br><span class="line">&#x2F;&#x2F; 针对该仓库配置 (优先使用配置) </span><br><span class="line">$ git config user.name &quot;John Doe&quot;</span><br><span class="line">&#x2F;&#x2F;</span><br><span class="line">&#x2F;&#x2F; 查看信息配置</span><br><span class="line">$ git config --list </span><br></pre></td></tr></table></figure>
+<h4 id="tips"><a href="#tips" class="headerlink" title="tips"></a>tips</h4><ol>
+<li>/etc/gitconfig 文件: 包含系统上每一个用户及他们仓库的通用配置。 如果使用带有 –system 选项的<br>git config 时，它会从此文件读写配置变量。</li>
+<li>~/.gitconfig 或 ~/.config/git/config 文件：只针对当前用户。 可以传递 –global 选项让 Git<br>读写此文件。</li>
+<li>当前使用仓库的 Git 目录中的 config 文件（就是 .git/config）：针对该仓库。</li>
+</ol>
+<h3 id="获取-Git-仓库"><a href="#获取-Git-仓库" class="headerlink" title="获取 Git 仓库"></a>获取 Git 仓库</h3><h4 id="在现有目录中初始化仓库"><a href="#在现有目录中初始化仓库" class="headerlink" title="在现有目录中初始化仓库"></a>在现有目录中初始化仓库</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git init</span><br></pre></td></tr></table></figure>
+<p>该命令将创建一个名为 .git 的子目录，这个子目录含有你初始化的 Git 仓库中所有的必须文件，这些文件是<br>Git 仓库的骨干。 但是，在这个时候，我们仅仅是做了一个初始化的操作，你的项目里的文件还没有被跟踪。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git add *.c</span><br><span class="line">$ git add LICENSE</span><br><span class="line">$ git commit -m &#39;initial project version&#39;</span><br></pre></td></tr></table></figure>
+
+<h4 id="克隆现有的仓库"><a href="#克隆现有的仓库" class="headerlink" title="克隆现有的仓库"></a>克隆现有的仓库</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;libgit2&#x2F;libgit2</span><br></pre></td></tr></table></figure>
+<p>重命名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;libgit2&#x2F;libgit2 mylibgit</span><br></pre></td></tr></table></figure>
+
+<h3 id="记录每次更新到仓库"><a href="#记录每次更新到仓库" class="headerlink" title="记录每次更新到仓库"></a>记录每次更新到仓库</h3><h4 id="相关命令"><a href="#相关命令" class="headerlink" title="相关命令"></a>相关命令</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 暂存文件</span><br><span class="line">$ git add</span><br><span class="line">&#x2F;&#x2F; 现在的暂存区域已经准备妥当可以提交了</span><br><span class="line">$ git commit</span><br><span class="line">&#x2F;&#x2F; 此命令比较的是工作目录中当前文件和暂存区域快照之间的差异， 也就是修改之后还没有暂存起来的变化内容。</span><br><span class="line">$ git diff</span><br><span class="line">&#x2F;&#x2F; 若要查看已暂存的将要添加到下次提交里的内容，可以用 git diff --cached 命令。</span><br><span class="line">&#x2F;&#x2F;（Git 1.6.1 及更高版本还允许使用 git diff --staged，效果是相同的，但更好记些。）</span><br><span class="line">&#x2F;&#x2F; 查看状态</span><br><span class="line">$ git status</span><br><span class="line">&#x2F;&#x2F; 查看日志</span><br><span class="line">$ git log</span><br></pre></td></tr></table></figure>
+
+<h4 id="移除文件"><a href="#移除文件" class="headerlink" title="移除文件"></a>移除文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 移除README文件</span><br><span class="line">&#x2F;&#x2F; 要从 Git 中移除某个文件，并连带从工作目录中删除指定的文件，这样以后就不会出现在未跟踪文件清单中了。</span><br><span class="line">$ git rm README</span><br><span class="line">&#x2F;&#x2F; 另外一种情况是，我们想把文件从 Git 仓库中删除（亦即从暂存区域移除），但仍然希望保留在磁盘中。</span><br><span class="line">$ git rm --cached README</span><br></pre></td></tr></table></figure>
+
+<h4 id="移动文件-即重命名"><a href="#移动文件-即重命名" class="headerlink" title="移动文件(即重命名)"></a>移动文件(即重命名)</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git mv file_from file_to</span><br></pre></td></tr></table></figure>
+
+<h3 id="撤消操作"><a href="#撤消操作" class="headerlink" title="撤消操作"></a>撤消操作</h3><h4 id="重新编辑提交信息"><a href="#重新编辑提交信息" class="headerlink" title="重新编辑提交信息"></a>重新编辑提交信息</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 有时候我们提交完了才发现漏掉了几个文件没有添加，或者提交信息写错了。 此时，</span><br><span class="line">&#x2F;&#x2F; 可以运行带有 --amend 选项的提交命令尝试重新提交：</span><br><span class="line">$ git commit -m &#39;initial commit&#39;</span><br><span class="line">$ git add forgotten_file</span><br><span class="line">$ git commit --amend</span><br><span class="line">&#x2F;&#x2F; 最终你只会有一个提交——第二次提交将代替第一次提交的结果。</span><br></pre></td></tr></table></figure>
+
+<h4 id="取消暂存的文件"><a href="#取消暂存的文件" class="headerlink" title="取消暂存的文件"></a>取消暂存的文件</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git reset HEAD CONTRIBUTING.md</span><br><span class="line">&#x2F;&#x2F; tip:虽然在调用时加上 --hard 选项可以令 git reset 成为一个危险的命令（译注：可能导致工</span><br><span class="line">&#x2F;&#x2F; 作目录中所有当前进度丢失！），但本例中工作目录内的文件并不会被修改。 不加选项地调用</span><br><span class="line">&#x2F;&#x2F; git reset 并不危险 — 它只会修改暂存区域。</span><br></pre></td></tr></table></figure>
+
+<h4 id="撤消对文件的修改"><a href="#撤消对文件的修改" class="headerlink" title="撤消对文件的修改"></a>撤消对文件的修改</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git checkout -- CONTRIBUTING.md</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; tips: 这个命令会丢失当前修改，如果你需要当前进度，但有需要撤销当前修改。此时，使用分支来保存进度会很有用</span><br></pre></td></tr></table></figure>
+
+<h3 id="远程仓库的使用"><a href="#远程仓库的使用" class="headerlink" title="远程仓库的使用"></a>远程仓库的使用</h3><h4 id="查看远程仓库"><a href="#查看远程仓库" class="headerlink" title="查看远程仓库"></a>查看远程仓库</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote -v</span><br></pre></td></tr></table></figure>
+
+<h4 id="添加远程仓库"><a href="#添加远程仓库" class="headerlink" title="添加远程仓库"></a>添加远程仓库</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote add &lt;name&gt; &lt;url&gt;</span><br></pre></td></tr></table></figure>
+
+<h4 id="从远程仓库中抓取与拉取"><a href="#从远程仓库中抓取与拉取" class="headerlink" title="从远程仓库中抓取与拉取"></a>从远程仓库中抓取与拉取</h4><p>git fetch 和git pull 的差别</p>
+<ol>
+<li>git fetch 相当于是从远程获取最新到本地，不会自动merge，如下指令：</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">　git fetch orgin master &#x2F;&#x2F;将远程仓库的master分支下载到本地当前branch中</span><br><span class="line"></span><br><span class="line">　git log -p master  ..origin&#x2F;master &#x2F;&#x2F;比较本地的master分支和origin&#x2F;master分支的差别</span><br><span class="line"></span><br><span class="line">　git merge origin&#x2F;master &#x2F;&#x2F;进行合并</span><br></pre></td></tr></table></figure>
+<p>也可以用以下指令：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git fetch origin master:tmp &#x2F;&#x2F;从远程仓库master分支获取最新，在本地建立tmp分支</span><br><span class="line"></span><br><span class="line">git diff tmp &#x2F;&#x2F;將當前分支和tmp進行對比</span><br><span class="line"></span><br><span class="line">git merge tmp &#x2F;&#x2F;合并tmp分支到当前分支</span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li>git pull：相当于是从远程获取最新版本并merge到本地</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git pull origin master</span><br></pre></td></tr></table></figure>
+<p>git pull 相当于从远程获取最新版本并merge到本地</p>
+<p>在实际使用中，git fetch更安全一些</p>
+<h4 id="推送到远程仓库"><a href="#推送到远程仓库" class="headerlink" title="推送到远程仓库"></a>推送到远程仓库</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push [remote-name] [branchname]。</span><br></pre></td></tr></table></figure>
+
+<h4 id="查看某个远程仓库"><a href="#查看某个远程仓库" class="headerlink" title="查看某个远程仓库"></a>查看某个远程仓库</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git remote show origin</span><br></pre></td></tr></table></figure>
+
+<h4 id="远程仓库的移除与重命名"><a href="#远程仓库的移除与重命名" class="headerlink" title="远程仓库的移除与重命名"></a>远程仓库的移除与重命名</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;如果想要重命名引用的名字可以运行 git remote rename 去修改一个远程仓库的简写名。 </span><br><span class="line">&#x2F;&#x2F;例如，想要将 pb重命名为 paul，可以用 git remote rename 这样做：</span><br><span class="line"></span><br><span class="line">git remote rename pb paul</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 移除远程仓库</span><br><span class="line"></span><br><span class="line">$ git remote rm paul</span><br></pre></td></tr></table></figure>
+
+<h3 id="打标签"><a href="#打标签" class="headerlink" title="打标签"></a>打标签</h3><h4 id="列出标签"><a href="#列出标签" class="headerlink" title="列出标签"></a>列出标签</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git tag</span><br><span class="line">v0.1</span><br><span class="line">v1.3</span><br><span class="line">&#x2F;&#x2F; 这个命令以字母顺序列出标签；但是它们出现的顺序并不重要。</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 特定版本 1.8.5 版本</span><br><span class="line">git tag -l &#39;v1.8.5*&#39;</span><br></pre></td></tr></table></figure>
+
+<h4 id="创建标签"><a href="#创建标签" class="headerlink" title="创建标签"></a>创建标签</h4><p>两种标签类型 lightweight(轻量标签) annotated(附注标签)</p>
+<h5 id="附注标签"><a href="#附注标签" class="headerlink" title="附注标签"></a>附注标签</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git tag -a v1.4 -m &quot;my version 1.4&quot;</span><br><span class="line">$ git tag</span><br><span class="line">v0.1</span><br><span class="line">v1.3</span><br><span class="line">v1.4</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 通过使用 git show 命令可以看到标签信息与对应的提交信息：</span><br><span class="line"></span><br><span class="line">$ git show v1.4</span><br><span class="line">tag v1.4</span><br><span class="line">Tagger: Ben Straub &lt;ben@straub.cc&gt;</span><br><span class="line">Date: Sat May 3 20:19:12 2014 -0700</span><br><span class="line">my version 1.4</span><br><span class="line">commit ca82a6dff817ec66f44342007202690a93763949</span><br><span class="line">Author: Scott Chacon &lt;schacon@gee-mail.com&gt;</span><br><span class="line">Date: Mon Mar 17 21:52:11 2008 -0700</span><br><span class="line">  changed the version number</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h5 id="轻量标签"><a href="#轻量标签" class="headerlink" title="轻量标签"></a>轻量标签</h5><p>另一种给提交打标签的方式是使用轻量标签。 轻量标签本质上是将提交校验和存储到一个文件中——没有保存<br>任何其他信息。 创建轻量标签，不需要使用 -a、-s 或 -m 选项，只需要提供标签名字：</p>
+<h4 id="后期打标签"><a href="#后期打标签" class="headerlink" title="后期打标签"></a>后期打标签</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git tag -a v1.2 9fceb02</span><br></pre></td></tr></table></figure>
+
+<h4 id="共享标签"><a href="#共享标签" class="headerlink" title="共享标签"></a>共享标签</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git push origin v1.5</span><br><span class="line">&#x2F;&#x2F; 推送所有</span><br><span class="line">$ git push origin --tags</span><br></pre></td></tr></table></figure>
+
+<h4 id="删除标签"><a href="#删除标签" class="headerlink" title="删除标签"></a>删除标签</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git tag -d v1.4-lw</span><br><span class="line">&#x2F;&#x2F; 应该注意的是上述命令并不会从任何远程仓库中移除这个标签，你必须使用 git push &lt;remote&gt;</span><br><span class="line">&#x2F;&#x2F; :refs&#x2F;tags&#x2F;&lt;tagname&gt; 来更新你的远程仓库：</span><br><span class="line">$ git push origin :refs&#x2F;tags&#x2F;v1.4-lw</span><br></pre></td></tr></table></figure>
+
+<h3 id="Git-别名"><a href="#Git-别名" class="headerlink" title="Git 别名"></a>Git 别名</h3><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git config --global alias.co checkout</span><br><span class="line">$ git config --global alias.br branch</span><br><span class="line">$ git config --global alias.ci commit</span><br><span class="line">$ git config --global alias.st status</span><br></pre></td></tr></table></figure>
+
+<h3 id="Git-分支"><a href="#Git-分支" class="headerlink" title="Git 分支"></a>Git 分支</h3><p>指向提交对象的指针</p>
+<h3 id="分支的新建与合并"><a href="#分支的新建与合并" class="headerlink" title="分支的新建与合并"></a>分支的新建与合并</h3><h3 id="给一个项目做贡献"><a href="#给一个项目做贡献" class="headerlink" title="给一个项目做贡献"></a>给一个项目做贡献</h3><p>将在 featureB 分支上合并的工作推送到服务器上的 featureBee 分支。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">git push -u origin featureB:featureBee</span><br></pre></td></tr></table></figure>
+
+<h4 id="派生的公开项目"><a href="#派生的公开项目" class="headerlink" title="派生的公开项目"></a>派生的公开项目</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git clone (url)</span><br><span class="line">$ cd project</span><br><span class="line">$ git checkout -b featureA</span><br><span class="line"># (work)</span><br><span class="line">$ git commit</span><br><span class="line"># (work)</span><br><span class="line">$ git commit</span><br><span class="line">&#x2F;&#x2F; 创建一份自己的可写的项目派生仓库。</span><br><span class="line">$ git remote add myfork (url)</span><br><span class="line">$ git push -u myfork featureA</span><br><span class="line">&#x2F;&#x2F; 当工作已经被推送到你的派生后，你需要通知维护者。 这通常被称作一个拉取请求（pull request）</span><br></pre></td></tr></table></figure>
+
+<h3 id="维护项目"><a href="#维护项目" class="headerlink" title="维护项目"></a>维护项目</h3><h4 id="在特性分支中工作"><a href="#在特性分支中工作" class="headerlink" title="在特性分支中工作"></a>在特性分支中工作</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git branch sc&#x2F;ruby_client master</span><br><span class="line">&#x2F;&#x2F; 现在你已经准备好将别人贡献的工作加入到这个特性分支，并考虑是否将其合并到长期分支中去了。</span><br></pre></td></tr></table></figure>
+<h4 id="应用来自邮件的补丁"><a href="#应用来自邮件的补丁" class="headerlink" title="应用来自邮件的补丁"></a>应用来自邮件的补丁</h4><p>使用 git apply，或者使用 git am。</p>
+<h3 id="选择修订版本"><a href="#选择修订版本" class="headerlink" title="选择修订版本"></a>选择修订版本</h3><p>Git 允许你通过几种方法来指明特定的或者一定范围内的提交。</p>
+<h4 id="单个修订版本"><a href="#单个修订版本" class="headerlink" title="单个修订版本"></a>单个修订版本</h4><p>你可以通过 Git 给出的 SHA-1 值来获取一次提交。</p>
+<h4 id="简短的-SHA-1"><a href="#简短的-SHA-1" class="headerlink" title="简短的 SHA-1"></a>简短的 SHA-1</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 如果你想 git show 这个提交</span><br><span class="line">$ git show 1c002d</span><br></pre></td></tr></table></figure>
+<h4 id="分支引用"><a href="#分支引用" class="headerlink" title="分支引用"></a>分支引用</h4><p>指明一次提交最直接的方法是有一个指向它的分支引用。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 假设 topic1 分支指向 ca82a6d ，那么以下的命令是等价的：</span><br><span class="line">$ git show ca82a6dff817ec66f44342007202690a93763949</span><br><span class="line">$ git show topic1</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 如果你想知道某个分支指向哪个特定的 SHA-1</span><br><span class="line"></span><br><span class="line">$ git rev-parse topic1</span><br><span class="line">ca82a6dff817ec66f44342007202690a93763949</span><br></pre></td></tr></table></figure>
+<h4 id="引用日志"><a href="#引用日志" class="headerlink" title="引用日志"></a>引用日志</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 每当你的 HEAD 所指向的位置发生了变化，Git 就会将这个信息存储到引用日志这个历史记录里。</span><br><span class="line">$ git reflog</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 显示5条</span><br><span class="line">$ git show HEAD@&#123;5&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h4 id="祖先引用"><a href="#祖先引用" class="headerlink" title="祖先引用"></a>祖先引用</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; HEAD 的父提交的父提交的父提交的第二个父提交</span><br><span class="line">HEAD~3^2</span><br></pre></td></tr></table></figure>
+
+<h4 id="提交区间"><a href="#提交区间" class="headerlink" title="提交区间"></a>提交区间</h4><h5 id="双点"><a href="#双点" class="headerlink" title="双点"></a>双点</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git log master..experiment</span><br><span class="line">D</span><br><span class="line">C</span><br><span class="line"></span><br><span class="line">$ git log experiment..master</span><br><span class="line">F</span><br><span class="line">E</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 查看本地仓库有，远程没有的提交</span><br><span class="line">$ git log origin&#x2F;master..HEAD</span><br></pre></td></tr></table></figure>
+<h5 id="多点"><a href="#多点" class="headerlink" title="多点"></a>多点</h5><p>两个以上的分支才能确定你所需要的修订</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F;  Git 允许你在任意引用前加上 ^ 字符或者 --not 来指明你不希</span><br><span class="line">&#x2F;&#x2F;  望提交被包含其中的分支。 因此下列3个命令是等价的：</span><br><span class="line"></span><br><span class="line">$ git log refA..refB</span><br><span class="line">$ git log ^refA refB</span><br><span class="line">$ git log refB --not refA</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 被 refA 或 refB 包含的但是不被 refC 包含的提交</span><br><span class="line"></span><br><span class="line">$ git log refA refB ^refC</span><br><span class="line">$ git log refA refB --not refC</span><br></pre></td></tr></table></figure>
+
+<h5 id="三点"><a href="#三点" class="headerlink" title="三点"></a>三点</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 如果你想看 master 或者 experiment 中包含的但不是两者共有的提</span><br><span class="line">&#x2F;&#x2F; 交，你可以执行</span><br><span class="line">$ git log master...experiment</span><br><span class="line">F</span><br><span class="line">E</span><br><span class="line">D</span><br><span class="line">C</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; --left-right，它会显示每个提交到底处于哪一侧的分支。</span><br><span class="line"></span><br><span class="line">$ git log --left-right master...experiment</span><br><span class="line">&lt; F</span><br><span class="line">&lt; E</span><br><span class="line">&gt; D</span><br><span class="line">&gt; C</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="重写历史"><a href="#重写历史" class="headerlink" title="重写历史"></a>重写历史</h3><h4 id="修改最后一次提交"><a href="#修改最后一次提交" class="headerlink" title="修改最后一次提交"></a>修改最后一次提交</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git commit --amend</span><br></pre></td></tr></table></figure>
+
+<h3 id="高级合并"><a href="#高级合并" class="headerlink" title="高级合并"></a>高级合并</h3><h4 id="中断一次合并"><a href="#中断一次合并" class="headerlink" title="中断一次合并"></a>中断一次合并</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git merge --abort</span><br></pre></td></tr></table></figure>
+<h4 id="忽略空白"><a href="#忽略空白" class="headerlink" title="忽略空白"></a>忽略空白</h4><p>两个参数选项：-Xignore-all-space 和 -Xignore-space-change<br>第一个选项忽略任意 数量 的已有空白的修改，第二个选项忽略所有空白修改。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git merge -Xignore-space-change branchName</span><br></pre></td></tr></table></figure>
+<h4 id="手动文件再合并"><a href="#手动文件再合并" class="headerlink" title="手动文件再合并"></a>手动文件再合并</h4><p> git show 命令与一个特别的语法，你可以将冲突文件的这些版本释放出一份拷贝。</p>
+ <figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git show :1:hello.rb &gt; hello.common.rb</span><br><span class="line">$ git show :2:hello.rb &gt; hello.ours.rb</span><br><span class="line">$ git show :3:hello.rb &gt; hello.theirs.rb</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 使用 ls-files -u 底层命令来得到这些文件的 Git blob 对象的实际 SHA-1值。</span><br><span class="line">$ git ls-files -u100755 ac51efdc3df4f4fd328d1a02ad05331d8e2c9111 1 hello.rb100755 36c06c8752c78d2aff89571132f3bf7841a7b5c3 2 hello.rb100755 e85207e04dfdd5eb0a1e9febbc67fd837c44a1cd 3 hello.rb</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 手工修复它们来修复</span><br><span class="line">$ dos2unix hello.theirs.rb</span><br><span class="line">&#x2F;&#x2F; git merge-file 命令来重新合并那个文件</span><br><span class="line"></span><br><span class="line">$ git merge-file -p \</span><br><span class="line">  hello.ours.rb hello.common.rb hello.theirs.rb &gt; hello.rb</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F;  git clean 命令来清理我们为手动合并而创建但不再有用的额外文件。</span><br><span class="line">$ git clean -f</span><br><span class="line">Removing hello.common.rb</span><br><span class="line">Removing hello.ours.rb</span><br><span class="line">Removing hello.theirs.rb</span><br></pre></td></tr></table></figure>
+
+<h4 id="检出冲突"><a href="#检出冲突" class="headerlink" title="检出冲突"></a>检出冲突</h4><p>上下文关联来解决这些冲突。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git checkout --conflict&#x3D;diff3 hello.rb</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 通过设置 merge.conflictstyle 选项为 diff3 来做为以后合并冲突的默认选项。</span><br><span class="line"></span><br><span class="line">$ git config --global merge.conflictstyle diff3</span><br></pre></td></tr></table></figure>
+
+<h4 id="合并日志"><a href="#合并日志" class="headerlink" title="合并日志"></a>合并日志</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 三点语法查出两边都没有的提交</span><br><span class="line">$ git log --oneline --left-right HEAD...MERGE_HEAD</span><br><span class="line">&lt; f1270f7 update README</span><br><span class="line">&lt; 9af9d3b add a README</span><br><span class="line">&lt; 694971d update phrase to hola world</span><br><span class="line">&gt; e3eb223 add more tests</span><br><span class="line">&gt; 7cff591 add testing script</span><br><span class="line">&gt; c3ffff1 changed text to hello mundo</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 查出冲突的提交</span><br><span class="line"></span><br><span class="line">$ git log --oneline --left-right --merge</span><br><span class="line">&lt; 694971d update phrase to hola world</span><br><span class="line">&gt; c3ffff1 changed text to hello mundo</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 如果你运行命令时用 -p 选项代替，你会得到所有冲突文件的区别。 </span><br><span class="line">&#x2F;&#x2F; 快速获得你需要帮助理解为什么发生冲突的</span><br><span class="line">&#x2F;&#x2F; 上下文，以及如何聪明地解决它，这会 非常 有用。</span><br></pre></td></tr></table></figure>
+
+<h4 id="组合式差异格式"><a href="#组合式差异格式" class="headerlink" title="组合式差异格式"></a>组合式差异格式</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git diff</span><br><span class="line"></span><br><span class="line">$ git log --cc -p -1</span><br></pre></td></tr></table></figure>
+
+<h3 id="撤消合并"><a href="#撤消合并" class="headerlink" title="撤消合并"></a>撤消合并</h3><h4 id="修复引用"><a href="#修复引用" class="headerlink" title="修复引用"></a>修复引用</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 如果这个不想要的合并提交只存在于你的本地仓库中，</span><br><span class="line">git reset --hard HEAD~</span><br></pre></td></tr></table></figure>
+
+<h4 id="还原提交"><a href="#还原提交" class="headerlink" title="还原提交"></a>还原提交</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git revert -m 1 HEAD[master b1d8379] Revert &quot;Merge branch &#39;topic&#39;&quot;</span><br><span class="line"></span><br><span class="line">$ git revert ^M</span><br><span class="line">[master 09f0126] Revert &quot;Revert &quot;Merge branch &#39;topic&#39;&quot;&quot;</span><br><span class="line">$ git merge topic</span><br></pre></td></tr></table></figure>
+
+<h3 id="其他类型的合并"><a href="#其他类型的合并" class="headerlink" title="其他类型的合并"></a>其他类型的合并</h3><h4 id="我们的或他们的偏好"><a href="#我们的或他们的偏好" class="headerlink" title="我们的或他们的偏好"></a>我们的或他们的偏好</h4><p>传递给 merge 命令一个-Xours 或 -Xtheirs 参数。</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 冲突时可以应用其中一边</span><br><span class="line">$ git merge -Xours mundo</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 只应用其中一边，简单的假合并</span><br><span class="line"></span><br><span class="line">$ git merge -s ours mundo</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 当再次合并时从本质上欺骗 Git 认为那个分支已经合并过经常是很有用的。</span><br></pre></td></tr></table></figure>
+
+<h4 id="子树合并"><a href="#子树合并" class="headerlink" title="子树合并"></a>子树合并</h4><h3 id="子模块"><a href="#子模块" class="headerlink" title="子模块"></a>子模块</h3><h4 id="开始使用子模块"><a href="#开始使用子模块" class="headerlink" title="开始使用子模块"></a>开始使用子模块</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git submodule add https:&#x2F;&#x2F;github.com&#x2F;chaconinc&#x2F;DbConnector</span><br></pre></td></tr></table></figure>
+
+<h4 id="克隆含有子模块的项目"><a href="#克隆含有子模块的项目" class="headerlink" title="克隆含有子模块的项目"></a>克隆含有子模块的项目</h4><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">$ git clone https:&#x2F;&#x2F;github.com&#x2F;chaconinc&#x2F;MainProject</span><br><span class="line"></span><br><span class="line">&#x2F;&#x2F; 此时子目录还是空的</span><br><span class="line"></span><br><span class="line">$ git submodule init</span><br><span class="line"></span><br><span class="line">$ git submodule update</span><br></pre></td></tr></table></figure>
+
+<h4 id="在包含子模块的项目上工作"><a href="#在包含子模块的项目上工作" class="headerlink" title="在包含子模块的项目上工作"></a>在包含子模块的项目上工作</h4><h5 id="拉取上游修改"><a href="#拉取上游修改" class="headerlink" title="拉取上游修改"></a>拉取上游修改</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&#x2F;&#x2F; 如果想要在子模块中查看新工作，可以进入到目录中运行 git fetch 与 git merge</span><br><span class="line">$ git fetch</span><br><span class="line"></span><br><span class="line">$ git merge origin&#x2F;master</span><br></pre></td></tr></table></figure>
+<h5 id="在子模块上工作"><a href="#在子模块上工作" class="headerlink" title="在子模块上工作"></a>在子模块上工作</h5><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>书籍笔记</category>
+        <category>progit</category>
+      </categories>
+      <tags>
+        <tag>100天挑战</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>无需Root,使安卓手机投屏到windows，并可以操作</title>
+    <url>/scrcpy/</url>
+    <content><![CDATA[<p>背景：最近学习了谢孟媛的英语课程，想要一边看英文版《计算机科学导论》一边学习英文。都说及时反馈才能学的更好，百度翻译的手机版有个句型分析功能可以很好的印证自己分析的英语句型对不对。无奈PC版百度翻译没有此功能。此时只能曲线救国了，在PC端使用手机APP。<br>经过测试和分析：手机模拟器 操作延迟比较高，而且应用也不够纯净。<br>后来灵机一动，是否有利用APP调式功能的原生能力，来操作手机。<br>百度和搜索一番发现一款叫scrcpy的开源软件，利用的是开发调试工具adb的能力做的控制软件。</p>
+<span id="more"></span>
+
+<p>经过折腾和源码编译程序得到下面的windows版本的程序包。（后来发现其他分支有windows现成的编译包<del>,</del> ,但是作为菜鸟的自己源码编译折腾下了下学了不少东西，编译的版本也比较新，如果有小伙伴编译碰到问题可以 在下面留言，我可以尽快回复）</p>
+<p>项目地址<code>https://github.com/Genymobile/scrcpy</code></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">https:&#x2F;&#x2F;752758299-1300378859.cos.ap-shanghai.myqcloud.com&#x2F;scrcpy-win64-v1.23-6-g53b1e16f.zip</span><br></pre></td></tr></table></figure>
+]]></content>
+  </entry>
+  <entry>
+    <title>使用路由器搭建私有云</title>
+    <url>/%E4%BD%BF%E7%94%A8%E8%B7%AF%E7%94%B1%E5%99%A8%E6%90%AD%E5%BB%BA%E7%A7%81%E6%9C%89%E4%BA%91/</url>
+    <content><![CDATA[<p>前置条件：</p>
+<ul>
+<li>一个带USB口的路由器，方便扩展硬盘</li>
+<li>公网IP(IPV4动态的即可、ipv6应该也可以但我没试过)  <ul>
+<li>没有公网IP，则需要通过内网穿透。通过第三方服务器转发，上传和下载的速度上线取决于第三方服务商，加钱可以获取更大的带宽</li>
+</ul>
+</li>
+</ul>
+<p>大致方法就是给路由器刷上openwrt或者老毛子等系统。相当于有了一个简易的Linux 环境，上面可以部署很多服务，而且有很多第三方插件。如可道云，等其他私有云。</p>
+<span id="more"></span>
+
+<p>以下是我折腾的方法</p>
+<ol>
+<li><p>在淘宝或者咸鱼上买一个二手路由器，我买的品牌是 歌华链 千兆</p>
+<blockquote>
+<p>新手可以直接购买 刷好的系统， Breed(这个可以方便重置更新和刷入其他软路由系统,如：openwrt)  +  (老毛子软路系统)  。自己也可以折腾刷入已上两个系统。再此我就不详细说了，因为我也是菜B <del>,</del></p>
+</blockquote>
+</li>
+</ol>
+<p><img src="https://assets-1300378859.cos.ap-guangzhou.myqcloud.com/typora/image-20230303100515801.png" alt="image-20230303100515801" style="zoom: 25%;" /><img src="https://assets-1300378859.cos.ap-guangzhou.myqcloud.com/typora/image-20230303102544463.png" alt="image-20230303102544463" style="zoom: 25%;" /></p>
+<ol start="2">
+<li>准备一块硬盘，我选择的是1T的 SSD</li>
+</ol>
+<img src="https://assets-1300378859.cos.ap-guangzhou.myqcloud.com/typora/image-20230303103400072.png" alt="image-20230303103400072" style="zoom:25%;" />
+
+<ol start="3">
+<li><p>登陆刷好老毛子的路由器后台 长这个样子。在DNSPod插件中，可以监听公网ip的变化，并调用DNSPod提供的接口更新其映射。这样就可以通过域名访问路由器了。</p>
+<blockquote>
+<p>这里面的token 是你买域名的提供商那里可以找到。 <a href="https://console.dnspod.cn/dns/list">https://console.dnspod.cn/dns/list</a> 比如我的是DNSPOD 这个页面的右上角点击头像，下拉列表里面就有秘钥管理</p>
+<img src="https://assets-1300378859.cos.ap-guangzhou.myqcloud.com/typora/image-20230303112153259.png" alt="image-20230303112153259" style="zoom:25%;" /></blockquote>
+</li>
+</ol>
+<img src="https://assets-1300378859.cos.ap-guangzhou.myqcloud.com/typora/image-20230303103800307.png" alt="image-20230303103800307" style="zoom: 50%;" />
+
+<p><img src="https://assets-1300378859.cos.ap-guangzhou.myqcloud.com/typora/image-20230303104257110.png" alt="image-20230303104257110"></p>
+<ol start="4">
+<li><p>格式化U盘的格式为 ETX4，  我使用的是DiskGenius软件</p>
+</li>
+<li><p>安装OPT环境到硬盘中。<br><img src="https://assets-1300378859.cos.ap-guangzhou.myqcloud.com/typora/image-20230303105822337.png" alt="image-20230303105726800"></p>
+</li>
+<li><p>开启web服务器环境。</p>
+<p><img src="https://assets-1300378859.cos.ap-guangzhou.myqcloud.com/typora/image-20230303105726800.png" alt="image-20230303105822337"></p>
+</li>
+<li><p>下载可道云的 最新的源码，部署到服务器中即可，  自带插件的文件，比较旧。<br><a href="https://kodcloud.com/download/">https://kodcloud.com/download/</a></p>
+</li>
+<li><p>在后台开启SSH，部署文件包到服务器目录下，并配置nginx即可。</p>
+<blockquote>
+<p>上传文件，可以使用winscp   <a href="https://winscp.net/eng/index.php">https://winscp.net/eng/index.php</a>  很好用，修改文件保存自动上传</p>
+</blockquote>
+<p><img src="https://assets-1300378859.cos.ap-guangzhou.myqcloud.com/typora/image-20230303111708031.png" alt="image-20230303111708031"></p>
+</li>
+<li><p>如果本地能访问，外网不行，查看是不是防火墙没有开放端口。可以通过自定义设置 –》 脚本 –》在防火墙规则启动后执行，设置一下代码放开外网端口。</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">iptables -I INPUT 1 -p tcp --dport 88 -j ACCEPT </span><br><span class="line">iptables -I INPUT 1 -p tcp --dport 89 -j ACCEPT</span><br><span class="line">iptables -I INPUT 1 -p tcp --dport 99 -j ACCEPT</span><br></pre></td></tr></table></figure></li>
+</ol>
+]]></content>
+  </entry>
+  <entry>
+    <title>《深入理解计算机系统》</title>
+    <url>/ComputerSystemAProgrammer&#39;sPerspective/</url>
+    <content><![CDATA[<ul>
+<li><input checked="" disabled="" type="checkbox"> 实数的表示</li>
+</ul>
+<span id="more"></span>
+
+<h2 id="程序结构和执行"><a href="#程序结构和执行" class="headerlink" title="程序结构和执行"></a>程序结构和执行</h2><h3 id="第2章-信息的表示和处理"><a href="#第2章-信息的表示和处理" class="headerlink" title="第2章 信息的表示和处理"></a>第2章 信息的表示和处理</h3><h4 id="2-4-浮点数"><a href="#2-4-浮点数" class="headerlink" title="2.4 浮点数"></a>2.4 浮点数</h4><h5 id="2-4-1-二进制小数"><a href="#2-4-1-二进制小数" class="headerlink" title="2.4.1 二进制小数"></a>2.4.1 二进制小数</h5><p>例1：</p>
+<p>$$<br>(0.5)_{10}=\frac{1}{2}=(0.1)_2<br>$$</p>
+<p>例2：<br>$$<br>(0.25)_{10}=\frac{1}{4}=(0.01)_2<br>$$<br><img src="https://assets-1300378859.cos.ap-guangzhou.myqcloud.com/typora/二进制小数-165353483697921.png" style="zoom: 80%;" /></p>
+<h5 id="2-4-2-IEEE-浮点表示"><a href="#2-4-2-IEEE-浮点表示" class="headerlink" title="2.4.2 IEEE 浮点表示"></a>2.4.2 IEEE 浮点表示</h5><p>IEEE浮点表示分为三部分</p>
+<ul>
+<li>sign 符号位 <code>0或者1</code></li>
+<li>exponent 阶码 <code>使用余码系统编码</code></li>
+<li>significand 尾数 <code>使用固定正整数编码</code></li>
+</ul>
+<p>代码示例：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show_float_bit</span><span class="params">(<span class="keyword">float</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> *a = (<span class="keyword">int</span> *)(&amp;x);</span><br><span class="line">  <span class="keyword">int</span> len = <span class="keyword">sizeof</span>(x) * <span class="number">8</span>;</span><br><span class="line">  <span class="keyword">int</span> cun = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span> (len-- &gt; <span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="comment">// 使用位运算判断其中每一位是否有为1</span></span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, (*a) &amp; (t &lt;&lt; (<span class="number">31</span> - cun)) ? <span class="number">1</span> : <span class="number">0</span>);</span><br><span class="line">    cun++;</span><br><span class="line">    <span class="keyword">if</span> (cun == <span class="number">1</span> || cun == <span class="number">9</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">/* code */</span></span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">  <span class="comment">// int也需要和float同样的字节数</span></span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;int字节数为： %lu&quot;</span>,<span class="keyword">sizeof</span>(cun));</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">float</span> var_runoob = <span class="number">5.75</span>;</span><br><span class="line">  show_float_bit(var_runoob);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 控制台输出：</span></span><br><span class="line"><span class="comment">// 0 10000001 01110000000000000000000</span></span><br><span class="line"><span class="comment">// int字节数为： 4</span></span><br></pre></td></tr></table></figure>
+
+
+<p>表示规则有三种情况<br>$$<br>值：V = 2^E*M<br>$$</p>
+<ul>
+<li>规格化的值<ul>
+<li>S = 1</li>
+<li>E(指数) = e(阶码的值) - 127(偏移量)</li>
+<li>M = 1 + f(小数)</li>
+</ul>
+</li>
+<li>非规格化的值<ul>
+<li>S = 1</li>
+<li>E(指数) = e(阶码的值) - 127(偏移量)</li>
+<li>M = f(小数)</li>
+</ul>
+</li>
+<li>特殊值<ul>
+<li>符号位0或者1，阶码全为1，尾数全为0，表示正负无穷大</li>
+<li>符号位0，阶码全为1，尾数全不为0，表示NaN</li>
+</ul>
+</li>
+</ul>
+<h5 id="浮点数的舍入"><a href="#浮点数的舍入" class="headerlink" title="浮点数的舍入"></a>浮点数的舍入</h5><ul>
+<li><p>十进制舍入：</p>
+<ul>
+<li><p>默认向偶数舍入</p>
+</li>
+<li><p>向上舍入</p>
+</li>
+<li><p>向下舍入</p>
+</li>
+</ul>
+</li>
+<li><p>二进制舍入：</p>
+<ul>
+<li>中间数习惯向0位舍入，不是中间数向上或者向下舍入</li>
+</ul>
+</li>
+</ul>
+<p>代码示例：</p>
+<figure class="highlight c"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">show_float_bit</span><span class="params">(<span class="keyword">float</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">int</span> *a = (<span class="keyword">int</span> *)(&amp;x);</span><br><span class="line">  <span class="keyword">int</span> len = <span class="keyword">sizeof</span>(x) * <span class="number">8</span>;</span><br><span class="line">  <span class="keyword">int</span> cun = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">int</span> t = <span class="number">1</span>;</span><br><span class="line">  <span class="keyword">while</span> (len-- &gt; <span class="number">0</span>)</span><br><span class="line">  &#123;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">&quot;%d&quot;</span>, (*a) &amp; (t &lt;&lt; (<span class="number">31</span> - cun)) ? <span class="number">1</span> : <span class="number">0</span>);</span><br><span class="line">    cun++;</span><br><span class="line">    <span class="keyword">if</span> (cun == <span class="number">1</span> || cun == <span class="number">9</span>)</span><br><span class="line">    &#123;</span><br><span class="line">      <span class="comment">/* code */</span></span><br><span class="line">      <span class="built_in">printf</span>(<span class="string">&quot; &quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;int字节数为： %lu&quot;</span>,<span class="keyword">sizeof</span>(cun));</span><br><span class="line">  <span class="built_in">printf</span>(<span class="string">&quot;\n&quot;</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">char</span> <span class="keyword">const</span> *argv[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">  <span class="keyword">float</span> var_runoob = <span class="number">0.1</span>;</span><br><span class="line">  show_float_bit(var_runoob);</span><br><span class="line">  <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 输入结构</span></span><br><span class="line"><span class="comment">// 0 01111011 10011001100110011001101</span></span><br><span class="line"><span class="comment">// int字节数为： 4</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="https://assets-1300378859.cos.ap-guangzhou.myqcloud.com/typora/image-20220601145734338.png" alt="image-20220601145734338"></p>
+<p>由以上草稿得出0.1表示成二进制小数则会无线循环为<code>0.00011001100110011...</code></p>
+<p>由上面代码输出得出23位的最后一会本应该是0，而后面的位数表示为<code>110011</code>,此输出则由<code>110011</code>向上舍入一位得到输出结果<code>10011001100110011001101</code></p>
+<p>为什么最后一位不是向0舍入呢，因为此数不是向上和向下舍入的中间数。</p>
+]]></content>
+      <tags>
+        <tag>读书笔记</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>零基础系统学习英语</title>
+    <url>/100days_english_1/</url>
+    <content><![CDATA[<p>背景：需要系统的学习好英语才能，获得更好的学习资源。尤其是计算机专业，英语则显得更加重要。</p>
+<h1 id="模板："><a href="#模板：" class="headerlink" title="模板："></a>模板：</h1><p>内容: 总结笔记</p>
+<details class="note success"><summary><p>学习时长：1h, 2021年5月20日 第1天</p>
+</summary>
+<p>心情：加油噢力给<br>明日计划：系统学习英语，达到看英文文档无压力。<br>阶段目标-N：学会五大句型。</p>
+
+</details>
+
+<span id="more"></span>
+
+<h1 id="五大句型八大词性"><a href="#五大句型八大词性" class="headerlink" title="五大句型八大词性"></a>五大句型八大词性</h1><h2 id="五大句型"><a href="#五大句型" class="headerlink" title="五大句型"></a>五大句型</h2><p>S：主语<br>V：动词<br>P：表语（主语补语）<br>O：宾语<br>O<sub>人</sub>：宾语指代词<br>O<sub>物</sub>：宾语指物品<br>C：宾语补语</p>
+<ol>
+<li>第一句型：S + V<blockquote>
+<p>例句：I walk.</p>
+</blockquote>
+</li>
+<li>第二句型：S + V + P<blockquote>
+<p>例句：I am wenliangzhou.</p>
+</blockquote>
+</li>
+<li>第三句型：S + V + O<blockquote>
+<p>例句：I love you.</p>
+</blockquote>
+</li>
+<li>第四句型：S + V + O<sub>人</sub>+ O<sub>物</sub><blockquote>
+<p>例句：I gave him a book.</p>
+</blockquote>
+</li>
+<li>第五句型: S + V + O + C <blockquote>
+<p>例句：I named a boy Tom.</p>
+</blockquote>
+</li>
+</ol>
+<details class="note success"><summary><p>学习时长：1h 12m, 2021年5月21日 第1天</p>
+</summary>
+<p>心情：加油噢力给<br>明日计划：学习与分析五大句型。<br>阶段目标-1：20%</p>
+
+</details>
+
+<h3 id="五大句型分析A"><a href="#五大句型分析A" class="headerlink" title="五大句型分析A"></a>五大句型分析A</h3><ol>
+<li>第一句型：S + V<blockquote>
+<p>例句：He got to ShangHai yesterday.<br><code>He</code>(s) <code>got</code>(v) <code>to ShangHai yesterday</code>(adv)：介词短语作副词使用。具有形容词的特性。</p>
+</blockquote>
+</li>
+<li>第二句型：S + V + P       <blockquote>
+<p>例句：She got angry.<br><code>She</code>(s) <code>got</code>(v) <code>angry</code>(p)：对她的状态的补充,使语句更加完整。</p>
+</blockquote>
+</li>
+<li>第三句型：S + V + O<blockquote>
+<p>例句：He got a newspaper.<br><code>He</code>(s) <code>got</code>(v) <code>a newspaper</code>(o)</p>
+</blockquote>
+</li>
+<li>第四句型：S + V + O<sub>人</sub>+ O<sub>物</sub><blockquote>
+<p>例句：He got me a newspaper.<br><code>He</code>(s) <code>got</code>(v) <code>me</code>(o<sub>人</sub>) <code>a newspaper</code>(o<sub>物</sub>)</p>
+</blockquote>
+</li>
+<li>第五句型: S + V + O + C <blockquote>
+<p>例句：She got her children ready.<br><code>She</code>(s) <code>got</code>(v) <code>her children</code>(o) <code>ready</code>(c)</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="定语-状语-（形容词性）"><a href="#定语-状语-（形容词性）" class="headerlink" title="定语/状语 （形容词性）"></a>定语/状语 （形容词性）</h3><h4 id="定语-gt-修饰名词或代词"><a href="#定语-gt-修饰名词或代词" class="headerlink" title="定语-&gt;修饰名词或代词"></a>定语-&gt;修饰名词或代词</h4><ol>
+<li>cute girls   (形容词)</li>
+<li>a girl       (冠词)</li>
+<li>your bag     (物主代词)</li>
+<li>分词<ul>
+<li>falling leafs (现在分词)</li>
+<li>fallen leafs  (过去分词)</li>
+</ul>
+</li>
+<li>something to drink (不定式作)</li>
+<li>a bottle on the table (介词短语)</li>
+<li>a book which I have read (定语从句)</li>
+</ol>
+<h4 id="状语-gt-修饰动词"><a href="#状语-gt-修饰动词" class="headerlink" title="状语-&gt;修饰动词"></a>状语-&gt;修饰动词</h4><ol>
+<li>walk slowly (副词) <blockquote>
+<p>tips: <code>adj+ly -&gt; adv</code>slowly  <code>n+ly -&gt; adj</code>friendly</p>
+</blockquote>
+</li>
+<li>look out of the window (介词短语)</li>
+<li>go out to eat dinner (不定式)</li>
+<li>make hay while the sun shines. (状语从句)</li>
+</ol>
+]]></content>
+      <tags>
+        <tag>100天挑战</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>编写webpack插件及调试webpck、vue-cli打包过程</title>
+    <url>/webpackplugin/</url>
+    <content><![CDATA[<p>编写自定义webpack插件及如何在webpack、vue-cli打包过程中进行调试。</p>
+<span id="more"></span>
+
+<h2 id="场景"><a href="#场景" class="headerlink" title="场景"></a>场景</h2><blockquote>
+<p>需求：生成一个引入打包后的资源的jade模板。egs模板同理</p>
+</blockquote>
+<p>最近遇到一个需求，需要自动生产类似 <code>htmlwebpackplugin</code> 插件生成的html, 自动引入需要的js、css等打包资源。但我们的需求是生成一个 <code>jade</code> html渲染模板, 生成的 <code>jade</code> 模板需要自动引入打包后的js、css等。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>看过webpack官方文档后了解到，可以编写webpack插件，通过一些webpack生命周期的钩子能访问到编译后的文件名、资源路径等。</p>
+<h2 id="编写插件"><a href="#编写插件" class="headerlink" title="编写插件"></a>编写插件</h2><h4 id="查询文档"><a href="#查询文档" class="headerlink" title="查询文档"></a>查询文档</h4><p>如何编写一个webpack插件, 可以查看<a href="https://v4.webpack.docschina.org/contribute/writing-a-plugin">官方文档</a></p>
+<h4 id="调试脚手架"><a href="#调试脚手架" class="headerlink" title="调试脚手架"></a>调试脚手架</h4><ul>
+<li>第一种调试方式：</li>
+</ul>
+<p>使用vscode调试, 点击下图的调试，即可调试不同shell命令的运行过程。</p>
+<img src="/webpackplugin/debug.jpg" class="left">
+
+<ul>
+<li>第二种调试方式：</li>
+</ul>
+<p>按下<kbd>Ctrl</kbd>+<kbd>Shift</kbd>+<kbd>D</kbd>创建或设置<code>launch.json</code>,编写<code>debugger</code>或点击vscode左边行数会显示一个红色小点，然后按<kbd>F5</kbd>即可运行调试。</p>
+<figure class="highlight json"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="comment">// 使用 IntelliSense 了解相关属性。 </span></span><br><span class="line">    <span class="comment">// 悬停以查看现有属性的描述。</span></span><br><span class="line">    <span class="comment">// 欲了解更多信息，请访问: https://go.microsoft.com/fwlink/?linkid=830387</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span>: <span class="string">&quot;0.2.0&quot;</span>,</span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span>: [</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="attr">&quot;type&quot;</span>: <span class="string">&quot;pwa-node&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;request&quot;</span>: <span class="string">&quot;launch&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;name&quot;</span>: <span class="string">&quot;webpack Program&quot;</span>,</span><br><span class="line">            <span class="attr">&quot;skipFiles&quot;</span>: [</span><br><span class="line">                <span class="string">&quot;&lt;node_internals&gt;/**&quot;</span></span><br><span class="line">            ],</span><br><span class="line">            <span class="comment">// 此处找到webpack shell命令执行入口  调试此文件即可调试打包过程，则可以进入编写的插件中。</span></span><br><span class="line">            <span class="attr">&quot;program&quot;</span>: <span class="string">&quot;$&#123;workspaceFolder&#125;\\node_modules\\webpack-cli\\bin\\cli.js&quot;</span>  </span><br><span class="line">        &#125;</span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="插件生成结果"><a href="#插件生成结果" class="headerlink" title="插件生成结果"></a>插件生成结果</h4><p><code>// npm run build</code> 生产如下jade模板<br>自此就可以使用<code>node + express</code>动态与渲染首页了。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">/* GET home page. */</span></span><br><span class="line">router.get(<span class="string">&#x27;/&#x27;</span>, <span class="function"><span class="keyword">function</span>(<span class="params">req, res, next</span>) </span>&#123;</span><br><span class="line">  res.render(<span class="string">&#x27;layout.jade&#x27;</span>, &#123; <span class="attr">title</span>: <span class="string">&#x27;生成渲染模板&#x27;</span>&#125;);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>生产的jade模板：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">doctype html</span><br><span class="line">html</span><br><span class="line">	head</span><br><span class="line">		title&#x3D; title</span><br><span class="line">		meta(name&#x3D;&#39;X-UA-Compatible&#39;,content&#x3D;&#39;IE&#x3D;edge&#39;)</span><br><span class="line">		meta(name&#x3D;&#39;viewport&#39;,content&#x3D;&#39;width&#x3D;device-width,initial-scale&#x3D;1,maximum-scale&#x3D;1,minimum-scale&#x3D;1,user-scalable&#x3D;no,viewport-fit&#x3D;cover&#39;)</span><br><span class="line">		link(rel&#x3D;&quot;icon&quot;, href&#x3D;&quot;&#x2F;activity&#x2F;javascripts&#x2F;favicon.ico&quot;)</span><br><span class="line">        &#x2F;&#x2F; ...</span><br><span class="line">		link(href&#x3D;&quot;&#x2F;activity&#x2F;javascripts&#x2F;js&#x2F;chunk-d6dc2e6a.3baad42d.js&quot; rel&#x3D;&quot;prefetch&quot;)</span><br><span class="line">		link(href&#x3D;&quot;&#x2F;activity&#x2F;javascripts&#x2F;js&#x2F;chunk-e941303e.deddaf7e.js&quot; rel&#x3D;&quot;prefetch&quot;)</span><br><span class="line">		link(href&#x3D;&quot;&#x2F;activity&#x2F;javascripts&#x2F;js&#x2F;chunk-eda7560c.6470a1df.js&quot; rel&#x3D;&quot;prefetch&quot;)</span><br><span class="line">        &#x2F;&#x2F; ...</span><br><span class="line">		link(href&#x3D;&quot;&#x2F;activity&#x2F;javascripts&#x2F;css&#x2F;chunk-e941303e.bd475895.css&quot; rel&#x3D;&quot;prefetch&quot;)</span><br><span class="line">		link(href&#x3D;&quot;&#x2F;activity&#x2F;javascripts&#x2F;css&#x2F;chunk-eda7560c.04c3ed64.css&quot; rel&#x3D;&quot;prefetch&quot;)</span><br><span class="line">		link(href&#x3D;&quot;&#x2F;activity&#x2F;javascripts&#x2F;js&#x2F;chunk-vendors.71f5a0b2.js&quot; rel&#x3D;&quot;preload&quot; as&#x3D;&quot;script&quot;)</span><br><span class="line">		link(href&#x3D;&quot;&#x2F;activity&#x2F;javascripts&#x2F;js&#x2F;app.29cfb0d0.js&quot; rel&#x3D;&quot;preload&quot; as&#x3D;&quot;script&quot;)</span><br><span class="line">		link(href&#x3D;&quot;&#x2F;activity&#x2F;javascripts&#x2F;css&#x2F;chunk-vendors.995dcb18.css&quot; rel&#x3D;&quot;preload&quot; as&#x3D;&quot;style&quot;)</span><br><span class="line">		link(href&#x3D;&quot;&#x2F;activity&#x2F;javascripts&#x2F;css&#x2F;app.d6b4f290.css&quot; rel&#x3D;&quot;preload&quot; as&#x3D;&quot;style&quot;)</span><br><span class="line">		link(href&#x3D;&quot;&#x2F;activity&#x2F;javascripts&#x2F;css&#x2F;chunk-vendors.995dcb18.css&quot; rel&#x3D;&quot;stylesheet&quot;)</span><br><span class="line">		link(href&#x3D;&quot;&#x2F;activity&#x2F;javascripts&#x2F;css&#x2F;app.d6b4f290.css&quot; rel&#x3D;&quot;stylesheet&quot;)</span><br><span class="line">	body</span><br><span class="line">		script(src&#x3D;&quot;&#x2F;activity&#x2F;javascripts&#x2F;js&#x2F;chunk-vendors.71f5a0b2.js&quot;)</span><br><span class="line">		script(src&#x3D;&quot;&#x2F;activity&#x2F;javascripts&#x2F;js&#x2F;app.29cfb0d0.js&quot;)</span><br></pre></td></tr></table></figure>
+
+<h4 id="插件代码如下："><a href="#插件代码如下：" class="headerlink" title="插件代码如下："></a>插件代码如下：</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="keyword">var</span> fs = <span class="built_in">require</span>(<span class="string">&#x27;fs&#x27;</span>);</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">GenerateJadePlugin</span> </span>&#123;</span><br><span class="line">    <span class="title">constructor</span>(<span class="params">&#123;</span></span><br><span class="line"><span class="params">        outputDir,</span></span><br><span class="line"><span class="params">        filename = <span class="string">&#x27;layout.jade&#x27;</span></span></span><br><span class="line"><span class="params">    &#125;</span>) &#123;</span><br><span class="line">        <span class="built_in">this</span>.outputDir = outputDir;</span><br><span class="line">        <span class="built_in">this</span>.filename = filename;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="title">apply</span>(<span class="params">compiler</span>)</span> &#123;</span><br><span class="line">        <span class="keyword">if</span> (process.env.NODE_ENV === <span class="string">&#x27;development&#x27;</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">var</span> publicPath = compiler.options.output.publicPath;</span><br><span class="line">        compiler.hooks.emit.tapAsync(<span class="string">&#x27;GenerateJadePlugin&#x27;</span>, <span class="function">(<span class="params">compilation, callback</span>) =&gt;</span> &#123;</span><br><span class="line">            <span class="comment">// 在生产文件中，创建一个头部字符串</span></span><br><span class="line">            <span class="keyword">var</span> jadeTemp = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">            <span class="keyword">var</span> prefetchJs = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">            <span class="keyword">var</span> prefetchCss = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">            <span class="keyword">var</span> preloadJs = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">            <span class="keyword">var</span> preloadCss = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">            <span class="keyword">var</span> currentCss = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">            <span class="keyword">var</span> currentJs = <span class="string">&#x27;&#x27;</span>;</span><br><span class="line">            <span class="comment">// 遍历所有编译过的资源文件,</span></span><br><span class="line">            <span class="comment">// 对于每个文件名称,都添加一行内容.</span></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">const</span> filename <span class="keyword">in</span> compilation.assets) &#123;</span><br><span class="line">                <span class="keyword">if</span> (<span class="regexp">/app[\s\S]*\.js$/</span>.test(filename)) &#123;</span><br><span class="line">                    preloadJs = <span class="string">`link(href=&quot;<span class="subst">$&#123;publicPath&#125;</span><span class="subst">$&#123;filename&#125;</span>&quot; rel=&quot;preload&quot; as=&quot;script&quot;)<span class="subst">$&#123;process.env.NODE_ENV === <span class="string">&#x27;production&#x27;</span> ? <span class="string">&#x27;\n\t\t&#x27;</span> : <span class="string">&#x27;&#x27;</span>&#125;</span>`</span>;</span><br><span class="line">                    currentJs = <span class="string">`script(src=&quot;<span class="subst">$&#123;publicPath&#125;</span><span class="subst">$&#123;filename&#125;</span>&quot;)`</span>;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (<span class="regexp">/chunk-vendors[\s\S]*\.js$/</span>.test(filename)) &#123;</span><br><span class="line">                    preloadJs = <span class="string">`link(href=&quot;<span class="subst">$&#123;publicPath&#125;</span><span class="subst">$&#123;filename&#125;</span>&quot; rel=&quot;preload&quot; as=&quot;script&quot;)\n\t\t`</span> + preloadJs;</span><br><span class="line">                    currentJs = <span class="string">`script(src=&quot;<span class="subst">$&#123;publicPath&#125;</span><span class="subst">$&#123;filename&#125;</span>&quot;)\n\t\t`</span> + currentJs;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (<span class="regexp">/\.js$/</span>.test(filename)) &#123;</span><br><span class="line">                    prefetchJs += <span class="string">`link(href=&quot;<span class="subst">$&#123;publicPath&#125;</span><span class="subst">$&#123;filename&#125;</span>&quot; rel=&quot;prefetch&quot;)\n\t\t`</span></span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (<span class="regexp">/chunk-vendors[\s\S]*\.css$/</span>.test(filename)) &#123;</span><br><span class="line">                    preloadCss = <span class="string">`link(href=&quot;<span class="subst">$&#123;publicPath&#125;</span><span class="subst">$&#123;filename&#125;</span>&quot; rel=&quot;preload&quot; as=&quot;style&quot;)\n\t\t`</span> + preloadCss;</span><br><span class="line">                    currentCss = <span class="string">`link(href=&quot;<span class="subst">$&#123;publicPath&#125;</span><span class="subst">$&#123;filename&#125;</span>&quot; rel=&quot;stylesheet&quot;)\n\t\t`</span> + currentCss;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (<span class="regexp">/app[\s\S]*\.css$/</span>.test(filename)) &#123;</span><br><span class="line">                    preloadCss = <span class="string">`link(href=&quot;<span class="subst">$&#123;publicPath&#125;</span><span class="subst">$&#123;filename&#125;</span>&quot; rel=&quot;preload&quot; as=&quot;style&quot;)\n\t\t`</span>;</span><br><span class="line">                    currentCss = <span class="string">`link(href=&quot;<span class="subst">$&#123;publicPath&#125;</span><span class="subst">$&#123;filename&#125;</span>&quot; rel=&quot;stylesheet&quot;)`</span>;</span><br><span class="line">                    <span class="keyword">continue</span>;</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">if</span> (<span class="regexp">/\.css$/</span>.test(filename)) &#123;</span><br><span class="line">                    prefetchCss += <span class="string">`link(href=&quot;<span class="subst">$&#123;publicPath&#125;</span><span class="subst">$&#123;filename&#125;</span>&quot; rel=&quot;prefetch&quot;)\n\t\t`</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            jadeTemp = <span class="string">`doctype html\nhtml\n\thead\n\t\ttitle= title\n\t\tmeta(name=&#x27;X-UA-Compatible&#x27;,content=&#x27;IE=edge&#x27;)\n\t\tmeta(name=&#x27;viewport&#x27;,content=&#x27;width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no,viewport-fit=cover&#x27;)\n\t\tlink(rel=&quot;icon&quot;, href=&quot;<span class="subst">$&#123;publicPath&#125;</span>favicon.ico&quot;)\n\t\t<span class="subst">$&#123;prefetchJs&#125;</span><span class="subst">$&#123;prefetchCss&#125;</span><span class="subst">$&#123;preloadJs&#125;</span><span class="subst">$&#123;preloadCss&#125;</span><span class="subst">$&#123;currentCss&#125;</span>\n\tbody\n\t\tblock content\n\t\tblock scripts\n\t\t<span class="subst">$&#123;currentJs&#125;</span>`</span>;</span><br><span class="line">            fs.open(<span class="built_in">this</span>.outputDir + <span class="built_in">this</span>.filename, <span class="string">&#x27;w&#x27;</span>, <span class="function">(<span class="params">err, fd</span>) =&gt;</span> &#123;</span><br><span class="line">                <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="built_in">console</span>.error(err);</span><br><span class="line">                &#125;</span><br><span class="line">                fs.writeFile(fd, jadeTemp, <span class="function">(<span class="params">err</span>) =&gt;</span> &#123;</span><br><span class="line">                    <span class="keyword">if</span> (err) &#123;</span><br><span class="line">                        <span class="keyword">return</span> <span class="built_in">console</span>.error(err);</span><br><span class="line">                    &#125;</span><br><span class="line">                    <span class="built_in">console</span>.log(<span class="string">`<span class="subst">$&#123;<span class="built_in">this</span>.filename&#125;</span> 写入成功!`</span>);</span><br><span class="line">                &#125;)</span><br><span class="line">            &#125;);</span><br><span class="line"></span><br><span class="line">            callback();</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">module</span>.exports = GenerateJadePlugin;</span><br></pre></td></tr></table></figure>
+<h4 id="配置和引入插件"><a href="#配置和引入插件" class="headerlink" title="配置和引入插件"></a>配置和引入插件</h4><p>接下来可以在脚手架中引入插件，具体引入方式可查看<a href="https://cli.vuejs.org/zh/guide/webpack.html#%E7%AE%80%E5%8D%95%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%B9%E5%BC%8F">官方文档</a>。</p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// vue.config.js</span></span><br><span class="line"><span class="keyword">const</span> GenerateJadePlugin = <span class="built_in">require</span>(<span class="string">&#x27;./webpackPlugin/GenerateJadePlugin&#x27;</span>)</span><br><span class="line">configureWebpack: &#123; <span class="comment">// webpack 配置</span></span><br><span class="line">    plugins: [</span><br><span class="line">        <span class="keyword">new</span> GenerateJadePlugin(&#123;</span><br><span class="line">            outputDir: resolve(<span class="string">&#x27;../ActiveServer/views/&#x27;</span>),</span><br><span class="line">            filename: <span class="string">&#x27;layout.jade&#x27;</span></span><br><span class="line">        &#125;)</span><br><span class="line">    ]</span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+]]></content>
+      <tags>
+        <tag>webpack</tag>
+      </tags>
+  </entry>
+</search>
